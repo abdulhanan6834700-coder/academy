@@ -5,22 +5,15 @@
 
 <meta charset="UTF-8">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const SUPABASE_URL="https://vxquqxiblysgzrpgfvgc.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY="sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
-const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-</script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Fatima Islamic Academy | Online Quran Classes
+Al Noor Quran Academy | Online Quran Classes
 </title>
 
 <meta
 name="description"
-content="Fatima Islamic Academy offers online Quran classes with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies for kids and adults."
+content="Al Noor Quran Academy offers online Quran classes with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies for kids and adults."
 >
 
 <link
@@ -195,7 +188,7 @@ a{
 
 
 /* =====================================================
-   WHATSAPP SVG
+   WHATSAPP SVG & BUTTONS
 ===================================================== */
 
 .whatsapp-svg{
@@ -210,12 +203,21 @@ a{
 
 }
 
+.header-buttons{
+    display:flex;
 
-/* =====================================================
-   PROFESSIONAL WHATSAPP BUTTON
-===================================================== */
+    align-items:center;
 
-.whatsapp-btn{
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:25px 0 18px;
+}
+
+.whatsapp-btn, .portal-btn{
 
     display:inline-flex;
 
@@ -225,17 +227,7 @@ a{
 
     gap:10px;
 
-    margin:25px 0 18px;
-
     padding:14px 30px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        );
 
     color:#fff;
 
@@ -257,8 +249,34 @@ a{
 
 }
 
+.whatsapp-btn{
 
-.whatsapp-btn:hover{
+    background:
+
+        linear-gradient(
+            135deg,
+            #25D366,
+            #128C7E
+        );
+
+}
+
+.portal-btn{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FFD700,
+            #B8860B
+        );
+
+    color:#061d43;
+
+}
+
+
+.whatsapp-btn:hover, .portal-btn:hover{
 
     transform:translateY(-3px);
 
@@ -266,7 +284,7 @@ a{
 
         0 12px 28px rgba(0,0,0,.40),
 
-        0 0 18px rgba(37,211,102,.30);
+        0 0 18px rgba(255,215,0,.30);
 
 }
 
@@ -1555,167 +1573,6 @@ a{
 
 
 /* =====================================================
-   SOCIAL
-===================================================== */
-
-.social-section{
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    background:var(--blue);
-
-    border-top:3px solid var(--gold);
-
-}
-
-
-.social-section h2{
-
-    color:var(--gold);
-
-    font-size:2.5em;
-
-    margin-bottom:15px;
-
-}
-
-
-.social-section > p{
-
-    color:#fff;
-
-    margin-bottom:35px;
-
-}
-
-
-.social-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(280px,1fr));
-
-    gap:25px;
-
-    max-width:1000px;
-
-    margin:auto;
-
-}
-
-
-.social-card{
-
-    background:var(--light-blue);
-
-    padding:25px;
-
-    border-radius:15px;
-
-}
-
-
-.facebook-card{
-
-    border:2px solid #1877F2;
-
-}
-
-
-.instagram-card{
-
-    border:2px solid #dd2a7b;
-
-}
-
-
-.social-icon{
-
-    font-size:40px;
-
-    margin-bottom:10px;
-
-}
-
-
-.facebook-card .social-icon,
-
-.facebook-card h3{
-
-    color:#1877F2;
-
-}
-
-
-.instagram-card .social-icon,
-
-.instagram-card h3{
-
-    color:#dd2a7b;
-
-}
-
-
-.social-card h3{
-
-    margin:10px 0;
-
-}
-
-
-.social-card a{
-
-    color:#fff;
-
-    word-break:break-word;
-
-}
-
-
-.social-button{
-
-    display:inline-block;
-
-    color:#fff;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    margin-top:15px;
-
-}
-
-
-.facebook-button{
-
-    background:#1877F2;
-
-}
-
-
-.instagram-button{
-
-    background:
-
-        linear-gradient(
-            45deg,
-            #f58529,
-            #dd2a7b,
-            #8134AF
-        );
-
-}
-
-
-/* =====================================================
    FOOTER
 ===================================================== */
 
@@ -1899,7 +1756,7 @@ a{
     }
 
 
-    .whatsapp-btn{
+    .whatsapp-btn, .portal-btn{
 
         padding:13px 25px;
 
@@ -1980,13 +1837,6 @@ a{
 
 
     .short-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .social-grid{
 
         grid-template-columns:1fr;
 
@@ -2142,16 +1992,16 @@ a{
 
         <img
             src="logo.jpg.jpg"
-            alt="Fatima Islamic Academy Logo"
+            alt="Al Noor Quran Academy Logo"
             class="main-logo"
         >
 
 
         <div class="logo-text">
 
-            <h1>FATIMA</h1>
+            <h1>AL NOOR</h1>
 
-            <p>ISLAMIC ACADEMY</p>
+            <p>QURAN ACADEMY</p>
 
         </div>
 
@@ -2159,38 +2009,42 @@ a{
 
 
 
-    <!-- PROFESSIONAL WHATSAPP BUTTON -->
+    <!-- HEADER BUTTONS (WHATSAPP + STUDENT PORTAL) -->
 
-    <a
-        href="https://wa.me/923130934215"
-        class="whatsapp-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
+    <div class="header-buttons">
 
-        <svg
-            class="whatsapp-svg"
-            viewBox="0 0 32 32"
-            aria-hidden="true"
+        <a
+            href="student-portal.html"
+            class="portal-btn"
+        >
+            🎓 Student Portal
+        </a>
+
+        <a
+            href="https://wa.me/923116876314"
+            class="whatsapp-btn"
+            target="_blank"
+            rel="noopener noreferrer"
         >
 
-            <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+            <svg
+                class="whatsapp-svg"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+            >
 
-            <path d="M16.02 3C8.84 3 3 8.83 3 16c0 2.29.6 4.44 1.65 6.3L3 29l6.86-1.61A12.94 12.94 0 0 0 16.02 29C23.19 29 29 23.17 29 16S23.19 3 16.02 3zm0 23.65c-2.01 0-3.98-.54-5.69-1.56l-.41-.24-4.07.95.97-3.96-.27-.41A10.98 10.98 0 1 1 16.02 26.65z"/>
+                <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
 
-        </svg>
+                <path d="M16.02 3C8.84 3 3 8.83 3 16c0 2.29.6 4.44 1.65 6.3L3 29l6.86-1.61A12.94 12.94 0 0 0 16.02 29C23.19 29 29 23.17 29 16S23.19 3 16.02 3zm0 23.65c-2.01 0-3.98-.54-5.69-1.56l-.41-.24-4.07.95.97-3.96-.27-.41A10.98 10.98 0 1 1 16.02 26.65z"/>
 
-        WhatsApp Us
+            </svg>
 
-    </a>
+            WhatsApp Us
 
+        </a>
 
-
-    <!-- STUDENT / ADMIN PORTALS -->
-    <div class="portal-links" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px auto 25px;">
-        <a href="student-portal.html" style="display:inline-block;padding:12px 24px;background:#D4AF37;color:#061d43;border:2px solid #FFD700;border-radius:50px;text-decoration:none;font-weight:800;">🎓 Student Portal</a>
-        <a href="admin-portal.html" style="display:inline-block;padding:12px 24px;background:#0b2d54;color:#FFD700;border:2px solid #FFD700;border-radius:50px;text-decoration:none;font-weight:800;">🔐 Admin Portal</a>
     </div>
+
 
 
     <!-- PROFESSIONAL WELCOME -->
@@ -2207,7 +2061,7 @@ a{
         <div class="welcome-title">
 
             Welcome to
-            <span>Fatima Islamic Academy</span>
+            <span>Al Noor Quran Academy</span>
 
         </div>
 
@@ -2300,7 +2154,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2345,7 +2199,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2390,7 +2244,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2435,7 +2289,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2480,7 +2334,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2525,7 +2379,7 @@ a{
                     </a>
 
                     <a
-                        href="https://wa.me/923130934215"
+                        href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2891,11 +2745,13 @@ a{
             </div>
 
 
-            <div class="why-card">
-                <div class="icon-box">🎯</div>
-                <h4>ONLINE PORTAL</h4>
-                <p>Student Classes Records &amp; History</p>
-            </div>
+            <a href="student-portal.html" style="text-decoration: none; display: block;">
+                <div class="why-card">
+                    <div class="icon-box">🎯</div>
+                    <h4>ONLINE PORTAL</h4>
+                    <p>Student Classes Records &amp; History</p>
+                </div>
+            </a>
 
 
         </div>
@@ -3056,8 +2912,9 @@ a{
 
 
        <a 
-  href="https://wa.me/923130934215?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
+  href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
   target="_blank"
+  class="trial-btn"
 >
   Claim Now
 </a>
@@ -3082,7 +2939,7 @@ a{
 
     <img
         src="pricing.jpg.jpg"
-        alt="Fatima Islamic Academy Fee Plans"
+        alt="Al Noor Quran Academy Fee Plans"
     >
 
 </section>
@@ -3281,118 +3138,6 @@ a{
     </form>
 
 </section>
-   <!-- SOCIAL SECTION -->
-<div class="social-wrapper">
-
-<!-- FACEBOOK -->
-<div class="social-card facebook-card">
-    <div class="social-icon">
-        <!-- Official Facebook Logo -->
-        <svg class="fb-icon" viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
-        </svg>
-    </div>
-    <h3>Facebook</h3>
-    
-    <a href="https://www.facebook.com/share/19KuiZFbmc/" target="_blank" rel="noopener noreferrer">
-        facebook.com/share/19KuiZFbmc
-    </a>
-
-    <br>
-
-    <a href="https://www.facebook.com/share/19KuiZFbmc/" target="_blank" rel="noopener noreferrer" class="social-button fb-button">
-        Visit Page
-    </a>
-</div>
-
-
-<!-- INSTAGRAM -->
-<div class="social-card instagram-card">
-    <div class="social-icon">
-        <!-- Official Instagram Gradient Logo -->
-        <svg class="insta-icon" viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3a5.75 5.75 0 1 1 0 11.5a5.75 5.75 0 0 1 0-11.5zm0 1.5a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5zm5.5-2a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5z"/>
-        </svg>
-    </div>
-    <h3>Instagram</h3>
-    
-    <a href="https://www.instagram.com/fatima.islamic.academy?utm_source=qr&igsh=MXBjbm1rZDVtMmU5Mw==" target="_blank" rel="noopener noreferrer">
-        @fatima.islamic.academy
-    </a>
-
-    <br>
-
-    <a href="https://www.instagram.com/fatima.islamic.academy?utm_source=qr&igsh=MXBjbm1rZDVtMmU5Mw==" target="_blank" rel="noopener noreferrer" class="social-button instagram-button">
-        Visit Profile
-    </a>
-</div>
-
-</div>
-
-
-<style>
-.social-wrapper {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-}
-.social-card {
-  background: #11264d;
-  border-radius: 12px;
-  padding: 20px;
-  width: 280px;
-  text-align: center;
-}
-.social-card h3 { margin: 10px 0; font-size: 18px; }
-.social-card a { color: #ccc; text-decoration: none; font-size: 14px; }
-
-/* Facebook Official */
-.facebook-card { border: 2px solid #1877F2; }
-.facebook-card h3 { color: #1877F2; }
-.fb-icon { fill: #1877F2; }
-.fb-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: white !important;
-  background: #1877F2;
-}
-
-/* Instagram Official */
-.instagram-card { border: 2px solid #E1306C; }
-.instagram-card h3 { color: #E1306C; }
-.insta-icon {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  border-radius: 6px;
-  padding: 3px;
-}
-.insta-icon path { fill: white !important; }
-.instagram-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: white !important;
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-}
-
-.social-button:hover { opacity: 0.85; }
-   </style>
-
-
-
-
-
-
-    </div>
-
-</section>
-
 
 
 <!-- =====================================================
@@ -3415,7 +3160,7 @@ a{
     <div class="copyright-bar">
 
         <p>
-            © Fatima Islamic Academy official
+            © Al Noor Quran Academy official
         </p>
 
     </div>
@@ -3424,15 +3169,15 @@ a{
     <div class="contact-footer">
 
         <p>
-            📧 www.fatima.islamic.academy@gmail.com
+            📧 alnoor.quran.academy@gmail.com
         </p>
 
         <p>
-            📞 +92 313 0934215
+            📞 +92 311 6876314
         </p>
 
         <p>
-            © 2026 Fatima Islamic Academy
+            © 2026 Al Noor Quran Academy
         </p>
 
     </div>
@@ -3485,7 +3230,7 @@ a{
 </style>
 
 <a
-    href="https://wa.me/923130934215?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
+    href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
     class="free-trial-float"
     target="_blank"
     rel="noopener noreferrer"
@@ -3499,11 +3244,11 @@ a{
 ===================================================== -->
 
 <a
-    href="https://wa.me/923130934215"
+    href="https://wa.me/923116876314"
     class="whatsapp-float"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Chat with Fatima Islamic Academy on WhatsApp"
+    aria-label="Chat with Al Noor Quran Academy on WhatsApp"
 >
 
 
@@ -3531,60 +3276,99 @@ a{
    ADMISSION FORM -> WHATSAPP
 ===================================================== */
 
-async function sendStudentForm(event){
+function sendStudentForm(event){
 
     event.preventDefault();
 
-    const form = document.getElementById("studentForm");
 
-    const studentName = form.StudentName.value.trim();
-    const age = Number(form.Age.value);
-    const gender = form.Gender.value;
-    const country = form.Country.value;
-    const parentName = form.ParentName.value.trim();
-    const parentPhone = form.ParentPhone.value.trim();
-    const parentEmail = form.ParentEmail.value.trim();
-    const course = form.Course.value;
-    const message = form.Message.value.trim();
+    const form =
+        document.getElementById("studentForm");
 
-    const { data, error } = await sb.from("admissions").insert({
-        student_name: studentName,
-        age: age,
-        gender: gender,
-        country: country,
-        parent_name: parentName,
-        parent_phone: parentPhone,
-        parent_email: parentEmail,
-        course: course,
-        message: message || null,
-        status: "pending"
-    }).select("student_code").single();
 
-    if (error) {
-        alert("Admission could not be saved. Please try again.\n\n" + error.message);
-        return;
-    }
+    const studentName =
+        form.StudentName.value.trim();
+
+
+    const age =
+        form.Age.value.trim();
+
+
+    const gender =
+        form.Gender.value;
+
+
+    const country =
+        form.Country.value;
+
+
+    const parentName =
+        form.ParentName.value.trim();
+
+
+    const parentPhone =
+        form.ParentPhone.value.trim();
+
+
+    const parentEmail =
+        form.ParentEmail.value.trim();
+
+
+    const course =
+        form.Course.value;
+
+
+    const message =
+        form.Message.value.trim();
+
 
     const whatsappMessage =
+
         "*New Student Admission*"
+
         + "\n\n"
-        + "*Student ID:* " + (data?.student_code || "Pending")
-        + "\n*Student Name:* " + studentName
-        + "\n*Age:* " + age
-        + "\n*Gender:* " + gender
-        + "\n*Country:* " + country
-        + "\n\n*Parent/Guardian:* " + parentName
-        + "\n*Parent WhatsApp:* " + parentPhone
-        + "\n*Parent Email:* " + parentEmail
-        + "\n\n*Course:* " + course
-        + "\n*Message:* " + (message || "No additional message");
+
+        + "*Student Name:* "
+        + studentName
+
+        + "\n*Age:* "
+        + age
+
+        + "\n*Gender:* "
+        + gender
+
+        + "\n*Country:* "
+        + country
+
+        + "\n\n*Parent/Guardian:* "
+        + parentName
+
+        + "\n*Parent WhatsApp:* "
+        + parentPhone
+
+        + "\n*Parent Email:* "
+        + parentEmail
+
+        + "\n\n*Course:* "
+        + course
+
+        + "\n*Message:* "
+        + (message || "No additional message");
+
 
     const whatsappURL =
-        "https://wa.me/923130934215?text=" + encodeURIComponent(whatsappMessage);
 
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
-    alert("Application saved successfully. Student ID: " + (data?.student_code || "Pending"));
-    form.reset();
+        "https://wa.me/923116876314?text="
+
+        + encodeURIComponent(
+            whatsappMessage
+        );
+
+
+    window.open(
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
 
