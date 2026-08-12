@@ -8,10 +8,10 @@
   <!-- 1. Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- 2. Supabase Library JS -->
+  <!-- 2. Supabase JS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <!-- 3. External Config File -->
+  <!-- 3. Your Config File -->
   <script src="config.js"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
@@ -36,45 +36,56 @@
   </div>
 
   <script>
-    const form = document.getElementById('login-form');
-    const errorMsg = document.getElementById('error-msg');
-    const loginBtn = document.getElementById('login-btn');
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('login-form');
+      const errorMsg = document.getElementById('error-msg');
+      const loginBtn = document.getElementById('login-btn');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-      
-      errorMsg.classList.add('hidden');
-      loginBtn.disabled = true;
-      loginBtn.textContent = 'Logging in...';
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        
+        errorMsg.classList.add('hidden');
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'Logging in...';
 
-      try {
-        if (!window.SUPABASE_CONFIG || !window.SUPABASE_CONFIG.client) {
-          throw new Error("Supabase configuration is missing.");
+        try {
+          // Check if supabase initialized properly
+          let client = window.SUPABASE_CONFIG?.client;
+          
+          if (!client && window.supabase) {
+            client = window.supabase.createClient(
+              "https://vxquqxiblysgzrpgfvgc.supabase.co", 
+              "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO"
+            );
+          }
+
+          if (!client) {
+            throw new Error("Supabase connection build nahi ho saka.");
+          }
+
+          const { data, error } = await client.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+          if (error) {
+            throw error;
+          }
+
+          // Successful login -> Redirect to dashboard or home
+          window.location.href = 'index.html'; 
+
+        } catch (err) {
+          errorMsg.textContent = err.message || "Login failed!";
+          errorMsg.classList.remove('hidden');
+        } finally {
+          loginBtn.disabled = false;
+          loginBtn.textContent = 'Login';
         }
-
-        const client = window.SUPABASE_CONFIG.client;
-
-        const { data, error } = await client.auth.signInWithPassword({
-          email: email,
-          password: password
-        });
-
-        if (error) {
-          throw error;
-        }
-
-        // Login successful - Dashboard page par redirect karein
-        window.location.href = 'index.html'; 
-      } catch (err) {
-        errorMsg.textContent = err.message || "Login failed!";
-        errorMsg.classList.remove('hidden');
-      } finally {
-        loginBtn.disabled = false;
-        loginBtn.textContent = 'Login';
-      }
+      });
     });
   </script>
 
