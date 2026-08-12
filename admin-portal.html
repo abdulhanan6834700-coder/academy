@@ -8,11 +8,8 @@
   <!-- 1. Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- 2. Supabase JS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- 3. Your Config File -->
-  <script src="config.js"></script>
+  <!-- 2. Supabase JS SDK (Latest v2 via unpkg) -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
 
@@ -36,56 +33,61 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('login-form');
-      const errorMsg = document.getElementById('error-msg');
-      const loginBtn = document.getElementById('login-btn');
+    const SUPABASE_URL = "https://vxquqxiblysgzrpgfvgc.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        
-        errorMsg.classList.add('hidden');
-        loginBtn.disabled = true;
-        loginBtn.textContent = 'Logging in...';
+    let supabaseClient = null;
 
-        try {
-          // Check if supabase initialized properly
-          let client = window.SUPABASE_CONFIG?.client;
-          
-          if (!client && window.supabase) {
-            client = window.supabase.createClient(
-              "https://vxquqxiblysgzrpgfvgc.supabase.co", 
-              "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO"
-            );
+    // Wait until DOM and scripts are fully loaded
+    window.addEventListener('load', () => {
+      if (window.supabase) {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      } else {
+        console.error("Supabase SDK load nahi ho saka.");
+      }
+    });
+
+    const form = document.getElementById('login-form');
+    const errorMsg = document.getElementById('error-msg');
+    const loginBtn = document.getElementById('login-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      
+      errorMsg.classList.add('hidden');
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Logging in...';
+
+      try {
+        if (!supabaseClient) {
+          if (window.supabase) {
+            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          } else {
+            throw new Error("Supabase library load nahi hui. Network connection check karein.");
           }
-
-          if (!client) {
-            throw new Error("Supabase connection build nahi ho saka.");
-          }
-
-          const { data, error } = await client.auth.signInWithPassword({
-            email: email,
-            password: password
-          });
-
-          if (error) {
-            throw error;
-          }
-
-          // Successful login -> Redirect to dashboard or home
-          window.location.href = 'index.html'; 
-
-        } catch (err) {
-          errorMsg.textContent = err.message || "Login failed!";
-          errorMsg.classList.remove('hidden');
-        } finally {
-          loginBtn.disabled = false;
-          loginBtn.textContent = 'Login';
         }
-      });
+
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+          email: email,
+          password: password
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        // Login hone par index.html par bhej dein
+        window.location.href = 'index.html'; 
+      } catch (err) {
+        errorMsg.textContent = err.message || "Login failed!";
+        errorMsg.classList.remove('hidden');
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Login';
+      }
     });
   </script>
 
