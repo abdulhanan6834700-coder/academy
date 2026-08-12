@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>
-Al Noor Quran Academy | Online Quran Classes
+    Al Noor Quran Academy | Online Quran Classes
 </title>
 
 <meta
-name="description"
-content="Al Noor Quran Academy offers online Quran classes with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies for kids and adults."
+    name="description"
+    content="Al Noor Quran Academy offers online Quran classes with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies for kids and adults."
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
 >
 
 <link
-rel="preconnect"
-href="https://fonts.googleapis.com"
->
-
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
->
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
 >
 
 
 <style>
 
 /* =====================================================
-   NEW PROFESSIONAL ROYAL EMERALD COLOR PALETTE
+   ROOT
 ===================================================== */
 
 :root{
 
-    --blue:#0a192f;           /* Deep Slate Navy (Background) */
-    --dark-blue:#061121;      /* Darker Slate */
-    --light-blue:#112240;     /* Card Background */
+    --blue:#0a192f;
 
-    --green:#0b4f34;          /* Royal Emerald Green Header */
+    --dark-blue:#061121;
 
-    --gold:#d4af37;           /* Metallic Warm Gold */
-    --bright-gold:#f3ca52;    /* Vibrant Accent Gold */
+    --light-blue:#112240;
+
+    --green:#0b4f34;
+
+    --gold:#d4af37;
+
+    --bright-gold:#f3ca52;
 
     --white:#ffffff;
-    --light-text:#e2e8f0;     /* Subtle Crisp Text */
+
+    --light-text:#e2e8f0;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
 
 }
 
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -70,11 +81,14 @@ html{
 
 body{
 
-    font-family:"Poppins",Arial,sans-serif;
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
 
     background:var(--blue);
 
-    color:#fff;
+    color:#ffffff;
 
     overflow-x:hidden;
 
@@ -91,15 +105,45 @@ a{
 }
 
 
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .container{
 
     width:100%;
 
     max-width:1200px;
 
-    margin:0 auto;
+    margin:auto;
 
     padding:0 20px;
+
+}
+
+
+.gold-line{
+
+    width:80px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    margin:0 auto 40px;
 
 }
 
@@ -114,7 +158,7 @@ a{
 
     max-width:1200px;
 
-    margin:0 auto;
+    margin:auto;
 
     padding:35px 20px 55px;
 
@@ -123,10 +167,6 @@ a{
 }
 
 
-/* =====================================================
-   LOGO
-===================================================== */
-
 .logo-area{
 
     display:flex;
@@ -134,8 +174,6 @@ a{
     flex-direction:column;
 
     align-items:center;
-
-    justify-content:center;
 
 }
 
@@ -157,8 +195,6 @@ a{
 
 .logo-text h1{
 
-    margin:0;
-
     color:var(--bright-gold);
 
     font-size:60px;
@@ -169,14 +205,12 @@ a{
 
     letter-spacing:3px;
 
-    text-shadow: 0 4px 15px rgba(243, 202, 82, 0.2);
-
 }
 
 
 .logo-text p{
 
-    margin:10px 0 0;
+    margin-top:10px;
 
     color:#fff;
 
@@ -190,22 +224,11 @@ a{
 
 
 /* =====================================================
-   WHATSAPP SVG & BUTTONS
+   HEADER BUTTONS
 ===================================================== */
 
-.whatsapp-svg{
-
-    width:24px;
-
-    height:24px;
-
-    display:block;
-
-    fill:currentColor;
-
-}
-
 .header-buttons{
+
     display:flex;
 
     align-items:center;
@@ -217,9 +240,12 @@ a{
     flex-wrap:wrap;
 
     margin:25px 0 18px;
+
 }
 
-.whatsapp-btn, .portal-btn{
+
+.whatsapp-btn,
+.portal-btn{
 
     display:inline-flex;
 
@@ -244,17 +270,14 @@ a{
     border-radius:50px;
 
     box-shadow:
-
-        0 7px 20px rgba(0,0,0,.30),
-
-        inset 0 1px 0 rgba(255,255,255,.20);
+        0 7px 20px rgba(0,0,0,.3);
 
 }
+
 
 .whatsapp-btn{
 
     background:
-
         linear-gradient(
             135deg,
             #25D366,
@@ -263,10 +286,10 @@ a{
 
 }
 
+
 .portal-btn{
 
     background:
-
         linear-gradient(
             135deg,
             var(--bright-gold),
@@ -278,15 +301,23 @@ a{
 }
 
 
-.whatsapp-btn:hover, .portal-btn:hover{
+.whatsapp-btn:hover,
+.portal-btn:hover{
 
     transform:translateY(-3px);
 
-    box-shadow:
+}
 
-        0 12px 28px rgba(0,0,0,.40),
 
-        0 0 18px rgba(243,202,82,.40);
+.whatsapp-svg{
+
+    width:24px;
+
+    height:24px;
+
+    display:block;
+
+    fill:currentColor;
 
 }
 
@@ -305,13 +336,17 @@ a{
 
     text-align:center;
 
-    background:rgba(17, 34, 64, 0.8);
+    background:
+        rgba(17,34,64,.8);
 
-    border:1px solid rgba(243,202,82,.35);
+    border:
+        1px solid
+        rgba(243,202,82,.35);
 
     border-radius:14px;
 
-    box-shadow:0 8px 22px rgba(0,0,0,.3);
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.3);
 
 }
 
@@ -339,16 +374,12 @@ a{
 
     font-weight:900;
 
-    line-height:1.3;
-
 }
 
 
 .welcome-title span{
 
     color:var(--bright-gold);
-
-    font-weight:900;
 
 }
 
@@ -370,8 +401,6 @@ a{
 
 .welcome-subtitle{
 
-    margin:0;
-
     color:var(--light-text);
 
     font-size:15px;
@@ -389,22 +418,28 @@ a{
 
     width:100%;
 
-    background: linear-gradient(135deg, var(--green), #073824);
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            #073824
+        );
 
-    border:1px solid rgba(243,202,82,.25);
+    border:
+        1px solid
+        rgba(243,202,82,.25);
 
     border-radius:12px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 22px rgba(0,0,0,.35);
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.35);
 
 }
 
 
 .main-heading{
-
-    width:100%;
 
     padding:20px 18px 12px;
 
@@ -425,7 +460,7 @@ a{
 
     max-width:1050px;
 
-    margin:0 auto;
+    margin:auto;
 
     padding:0 25px 25px;
 
@@ -443,7 +478,215 @@ a{
 
 
 /* =====================================================
-   PROGRAMS - 6 CARDS
+   SUPABASE AUTH
+===================================================== */
+
+.supabase-auth-section{
+
+    background:var(--dark-blue);
+
+    padding:60px 20px;
+
+}
+
+
+.supabase-auth-panel{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:var(--light-blue);
+
+    border:
+        1px solid
+        var(--gold);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+}
+
+
+.supabase-auth-panel h2{
+
+    text-align:center;
+
+    color:var(--bright-gold);
+
+    margin-bottom:10px;
+
+    font-size:30px;
+
+}
+
+
+.supabase-auth-panel > p{
+
+    text-align:center;
+
+    color:var(--light-text);
+
+    margin-bottom:25px;
+
+}
+
+
+.auth-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+
+.auth-grid input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:
+        1px solid
+        #334155;
+
+    border-radius:9px;
+
+    background:var(--dark-blue);
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+
+.auth-grid input:focus{
+
+    border-color:
+        var(--bright-gold);
+
+}
+
+
+.supabase-auth-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:15px;
+
+}
+
+
+.supabase-auth-actions button,
+.userbar button{
+
+    border:none;
+
+    border-radius:9px;
+
+    padding:13px 20px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+}
+
+
+.btn-signup{
+
+    background:var(--bright-gold);
+
+    color:#0a192f;
+
+}
+
+
+.btn-signin{
+
+    background:#22c55e;
+
+    color:#052e16;
+
+}
+
+
+.btn-reset{
+
+    background:#1e3a5f;
+
+    color:#fff;
+
+}
+
+
+.supabase-userbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    background:#061121;
+
+    padding:18px;
+
+    border-radius:12px;
+
+}
+
+
+.supabase-userbar strong{
+
+    color:#fff;
+
+}
+
+
+.supabase-userbar button{
+
+    background:#ef4444;
+
+    color:#fff;
+
+}
+
+
+.auth-message{
+
+    min-height:25px;
+
+    margin-top:18px;
+
+    color:var(--bright-gold);
+
+    font-weight:700;
+
+    text-align:center;
+
+}
+
+
+/* =====================================================
+   PROGRAMS
 ===================================================== */
 
 .programs{
@@ -452,7 +695,7 @@ a{
 
     max-width:1200px;
 
-    margin:0 auto;
+    margin:auto;
 
 }
 
@@ -487,22 +730,24 @@ a{
 .course-card{
 
     background:
-
         linear-gradient(
             145deg,
             var(--light-blue),
             var(--dark-blue)
         );
 
-    border:1px solid var(--gold);
+    border:
+        1px solid
+        var(--gold);
 
     border-radius:15px;
 
     overflow:hidden;
 
-    box-shadow:0 7px 20px rgba(0,0,0,.30);
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.3);
 
-    transition:.3s ease;
+    transition:.3s;
 
 }
 
@@ -511,9 +756,8 @@ a{
 
     transform:translateY(-7px);
 
-    border-color:var(--bright-gold);
-
-    box-shadow:0 12px 28px rgba(0,0,0,.40);
+    border-color:
+        var(--bright-gold);
 
 }
 
@@ -546,8 +790,6 @@ a{
 
     font-size:20px;
 
-    font-weight:800;
-
     margin-bottom:10px;
 
 }
@@ -572,46 +814,13 @@ a{
 
     justify-content:center;
 
-    align-items:center;
-
     gap:10px;
 
 }
 
 
-.btn-details{
-
-    background:#1e3a5f;
-
-    color:#fff;
-
-    padding:11px 30px;
-
-    border-radius:7px;
-
-    text-decoration:none;
-
-    font-size:15px;
-
-    font-weight:700;
-
-}
-
-
-.btn-details:hover{
-
-    background:#2b5288;
-
-    transform:translateY(-2px);
-
-}
-
-
+.btn-details,
 .btn-register{
-
-    background:var(--bright-gold);
-
-    color:#0a192f;
 
     padding:11px 25px;
 
@@ -624,11 +833,20 @@ a{
 }
 
 
-.btn-register:hover{
+.btn-details{
 
-    background:#fff;
+    background:#1e3a5f;
 
-    transform:translateY(-2px);
+    color:#fff;
+
+}
+
+
+.btn-register{
+
+    background:var(--bright-gold);
+
+    color:#0a192f;
 
 }
 
@@ -654,22 +872,7 @@ a{
 
     font-size:2.6em;
 
-    font-weight:800;
-
     margin-bottom:12px;
-
-}
-
-
-.gold-line{
-
-    width:80px;
-
-    height:3px;
-
-    background:var(--gold);
-
-    margin:0 auto 40px;
 
 }
 
@@ -685,7 +888,7 @@ a{
 
     max-width:750px;
 
-    margin:0 auto;
+    margin:auto;
 
     text-align:left;
 
@@ -706,9 +909,12 @@ a{
 
     border-radius:8px;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.06);
 
-    border-left: 4px solid var(--green);
+    border-left:
+        4px solid
+        var(--green);
 
 }
 
@@ -731,8 +937,6 @@ a{
 .regular-item p{
 
     color:#334155;
-
-    font-size:1em;
 
     font-weight:600;
 
@@ -760,8 +964,6 @@ a{
 
     font-size:2.5rem;
 
-    font-weight:800;
-
     margin-bottom:10px;
 
 }
@@ -771,7 +973,7 @@ a{
 
     max-width:1200px;
 
-    margin:0 auto;
+    margin:auto;
 
     display:grid;
 
@@ -787,24 +989,15 @@ a{
 
     background:var(--light-blue);
 
-    border:1px solid rgba(243,202,82,.20);
+    border:
+        1px solid
+        rgba(243,202,82,.2);
 
     border-radius:14px;
 
     padding:25px 20px;
 
     text-align:center;
-
-    transition:.3s ease;
-
-}
-
-
-.short-course:hover{
-
-    transform:translateY(-5px);
-
-    border-color:var(--bright-gold);
 
 }
 
@@ -850,8 +1043,6 @@ a{
 
     font-size:2.2em;
 
-    font-weight:800;
-
     margin-bottom:10px;
 
 }
@@ -860,8 +1051,6 @@ a{
 .who-we-are h3{
 
     color:#334155;
-
-    font-size:1.3em;
 
     margin-bottom:15px;
 
@@ -908,9 +1097,12 @@ a{
 
     padding:25px 15px;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.05);
 
-    border-bottom: 3px solid var(--green);
+    border-bottom:
+        3px solid
+        var(--green);
 
 }
 
@@ -936,13 +1128,13 @@ a{
 }
 
 
-.green-icon{background:#10B981;}
+.green-icon{background:#10B981}
 
-.blue-icon{background:#2563EB;}
+.blue-icon{background:#2563EB}
 
-.orange-icon{background:#F59E0B;}
+.orange-icon{background:#F59E0B}
 
-.red-icon{background:#EF4444;}
+.red-icon{background:#EF4444}
 
 
 .stat-card h4{
@@ -950,8 +1142,6 @@ a{
     color:#0f172a;
 
     font-size:2em;
-
-    margin-bottom:5px;
 
 }
 
@@ -964,7 +1154,7 @@ a{
 
 
 /* =====================================================
-   WHY CHOOSE US
+   WHY US
 ===================================================== */
 
 .why-us{
@@ -986,8 +1176,6 @@ a{
 
     margin-bottom:10px;
 
-    font-weight:800;
-
 }
 
 
@@ -998,8 +1186,6 @@ a{
     max-width:700px;
 
     margin:0 auto 40px;
-
-    line-height:1.6;
 
 }
 
@@ -1020,24 +1206,13 @@ a{
 
     background:var(--light-blue);
 
-    border:1px solid var(--gold);
+    border:
+        1px solid
+        var(--gold);
 
     border-radius:15px;
 
     padding:30px 20px;
-
-    transition:.3s ease;
-
-}
-
-
-.why-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 0 20px rgba(243,202,82, 0.2);
-
-    border-color:var(--bright-gold);
 
 }
 
@@ -1071,11 +1246,7 @@ a{
 
     color:var(--bright-gold);
 
-    font-size:1.1em;
-
     margin-bottom:8px;
-
-    font-weight:800;
 
 }
 
@@ -1102,6 +1273,15 @@ a{
 }
 
 
+.trust-list{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+
 .trust-section h2{
 
     text-align:center;
@@ -1109,15 +1289,6 @@ a{
     color:var(--bright-gold);
 
     margin-bottom:35px;
-
-}
-
-
-.trust-list{
-
-    max-width:800px;
-
-    margin:auto;
 
 }
 
@@ -1139,53 +1310,40 @@ a{
 
     color:#fff;
 
+    margin-top:5px;
+
 }
 
 
 .trust-green{
-
     border:2px solid #25D366;
-
 }
 
-
 .trust-green h3{
-
     color:#25D366;
-
 }
 
 
 .trust-gold{
-
     border:2px solid var(--gold);
-
 }
 
-
 .trust-gold h3{
-
     color:var(--bright-gold);
-
 }
 
 
 .trust-blue{
-
     border:2px solid #38bdf8;
-
 }
 
-
 .trust-blue h3{
-
     color:#38bdf8;
-
 }
 
 
 /* =====================================================
-   3 STEPS
+   STEPS
 ===================================================== */
 
 .steps{
@@ -1247,28 +1405,27 @@ a{
 
 
 /* =====================================================
-   FREE TRIAL MAIN
+   FREE TRIAL
 ===================================================== */
 
 .free-trial-box{
 
     background:
-
         linear-gradient(
             135deg,
             var(--bright-gold),
             var(--gold)
         );
 
-    border:3px solid var(--light-blue);
+    border:
+        3px solid
+        var(--light-blue);
 
     border-radius:20px;
 
     padding:25px 30px;
 
     margin:40px 20px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
 
 }
 
@@ -1312,8 +1469,6 @@ a{
 
     font-size:1.8em;
 
-    font-weight:900;
-
 }
 
 
@@ -1340,22 +1495,11 @@ a{
 
     font-weight:800;
 
-    white-space:nowrap;
-
-}
-
-
-.trial-btn:hover{
-
-    background:#fff;
-
-    color:#0a192f;
-
 }
 
 
 /* =====================================================
-   FEE PLANS
+   PRICING
 ===================================================== */
 
 .pricing-img{
@@ -1388,7 +1532,9 @@ a{
 
     border-radius:15px;
 
-    border:2px solid var(--gold);
+    border:
+        2px solid
+        var(--gold);
 
 }
 
@@ -1429,7 +1575,9 @@ a{
 
     border-radius:15px;
 
-    border:1px solid var(--gold);
+    border:
+        1px solid
+        var(--gold);
 
 }
 
@@ -1451,9 +1599,7 @@ a{
 
 
 .student-form input,
-
 .student-form select,
-
 .student-form textarea{
 
     width:100%;
@@ -1464,13 +1610,13 @@ a{
 
     border-radius:10px;
 
-    border:1px solid #233554;
+    border:
+        1px solid
+        #233554;
 
     background:var(--dark-blue);
 
     color:#fff;
-
-    font-family:inherit;
 
     font-size:15px;
 
@@ -1509,9 +1655,22 @@ a{
 }
 
 
-.student-form button:hover{
+.student-form button:disabled{
 
-    background:#fff;
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+.password-help{
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+    margin-top:-3px;
 
 }
 
@@ -1519,13 +1678,6 @@ a{
 /* =====================================================
    FOOTER
 ===================================================== */
-
-.main-footer{
-
-    margin-top:40px;
-
-}
-
 
 .payment-section{
 
@@ -1535,7 +1687,9 @@ a{
 
     text-align:center;
 
-    border-bottom:1px solid var(--gold);
+    border-bottom:
+        1px solid
+        var(--gold);
 
 }
 
@@ -1582,9 +1736,45 @@ a{
 
 .contact-footer p{
 
+    margin:7px 0;
+
+}
+
+
+/* =====================================================
+   FLOATING FREE TRIAL
+===================================================== */
+
+.free-trial-float{
+
+    position:fixed;
+
+    left:15px;
+
+    bottom:25px;
+
+    z-index:99999;
+
+    padding:12px 22px;
+
+    background:#D4AF37;
+
     color:#fff;
 
-    margin:7px 0;
+    border:
+        2px solid
+        #FFD700;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.3);
 
 }
 
@@ -1621,7 +1811,8 @@ a{
 
     border:3px solid #fff;
 
-    box-shadow:0 5px 18px rgba(0,0,0,.35);
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.35);
 
 }
 
@@ -1641,47 +1832,6 @@ a{
 
     fill:#fff;
 
-}
-
-
-/* =====================================================
-   FLOATING FREE TRIAL
-===================================================== */
-
-.free-trial-float {
-    position: fixed;
-    left: 15px;
-    right: auto;
-    bottom: 25px;
-
-    z-index: 99999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 22px;
-
-    background: var(--bright-gold);
-    color: #0a192f;
-
-    border: 2px solid #fff;
-    border-radius: 50px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.30);
-
-    transition: all 0.3s ease;
-}
-
-.free-trial-float:hover {
-    background: #fff;
-    color: #0a192f;
-    transform: translateY(-2px);
 }
 
 
@@ -1706,6 +1856,13 @@ a{
 
     }
 
+
+    .auth-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
 
@@ -1713,7 +1870,10 @@ a{
 
     .hero{
 
-        padding:28px 15px 45px;
+        padding:
+            28px
+            15px
+            45px;
 
     }
 
@@ -1741,27 +1901,12 @@ a{
     }
 
 
-    .whatsapp-btn, .portal-btn{
+    .whatsapp-btn,
+    .portal-btn{
 
         padding:13px 25px;
 
         font-size:16px;
-
-    }
-
-
-    .welcome-box{
-
-        padding:15px 12px 17px;
-
-    }
-
-
-    .welcome-small{
-
-        font-size:11px;
-
-        letter-spacing:2px;
 
     }
 
@@ -1773,18 +1918,9 @@ a{
     }
 
 
-    .welcome-subtitle{
-
-        font-size:12px;
-
-    }
-
-
     .main-heading{
 
         font-size:27px;
-
-        padding:16px 12px 10px;
 
     }
 
@@ -1793,37 +1929,22 @@ a{
 
         font-size:14px;
 
-        line-height:1.7;
-
-        padding:0 15px 21px;
-
     }
 
 
-    .courses{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .regular-list{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .grid-why{
-
-        grid-template-columns:1fr;
-
-    }
-
-
+    .courses,
+    .regular-list,
+    .grid-why,
     .short-grid{
 
         grid-template-columns:1fr;
+
+    }
+
+
+    .student-form{
+
+        padding:25px 18px;
 
     }
 
@@ -1840,13 +1961,6 @@ a{
     .trial-text{
 
         flex:auto;
-
-    }
-
-
-    .student-form{
-
-        padding:25px 18px;
 
     }
 
@@ -1869,6 +1983,10 @@ a{
         right:15px;
 
         bottom:18px;
+
+        width:55px;
+
+        height:55px;
 
     }
 
@@ -1922,26 +2040,9 @@ a{
 
 
     .btn-details,
-
     .btn-register{
 
         width:100%;
-
-    }
-
-
-    .free-trial-float{
-
-        max-width:170px;
-
-    }
-
-
-    .whatsapp-float{
-
-        width:55px;
-
-        height:55px;
 
     }
 
@@ -1971,9 +2072,8 @@ a{
 <header class="hero">
 
 
-    <!-- LOGO -->
-
     <div class="logo-area">
+
 
         <img
             src="logo.jpg.jpg"
@@ -1984,26 +2084,33 @@ a{
 
         <div class="logo-text">
 
-            <h1>AL NOOR</h1>
+            <h1>
+                AL NOOR
+            </h1>
 
-            <p>QURAN ACADEMY</p>
+            <p>
+                QURAN ACADEMY
+            </p>
 
         </div>
 
     </div>
 
 
-
-    <!-- HEADER BUTTONS (WHATSAPP + STUDENT PORTAL) -->
+    <!-- HEADER BUTTONS -->
 
     <div class="header-buttons">
+
 
         <a
             href="student-portal.html"
             class="portal-btn"
         >
+
             🎓 Student Portal
+
         </a>
+
 
         <a
             href="https://wa.me/923116876314"
@@ -2011,6 +2118,7 @@ a{
             target="_blank"
             rel="noopener noreferrer"
         >
+
 
             <svg
                 class="whatsapp-svg"
@@ -2024,6 +2132,7 @@ a{
 
             </svg>
 
+
             WhatsApp Us
 
         </a>
@@ -2031,10 +2140,10 @@ a{
     </div>
 
 
-
-    <!-- PROFESSIONAL WELCOME -->
+    <!-- WELCOME -->
 
     <div class="welcome-box">
+
 
         <div class="welcome-small">
 
@@ -2046,7 +2155,10 @@ a{
         <div class="welcome-title">
 
             Welcome to
-            <span>Al Noor Quran Academy</span>
+
+            <span>
+                Al Noor Quran Academy
+            </span>
 
         </div>
 
@@ -2060,11 +2172,9 @@ a{
 
         </p>
 
+
     </div>
 
-
-
-    <!-- GREEN HEADING + DESCRIPTION -->
 
     <div class="content-green">
 
@@ -2078,32 +2188,178 @@ a{
 
         <p class="hero-description">
 
-            One-to-one live Quran classes in Tajweed, Noorani Qaida,
-            Hifz, Tafseer and Islamic Studies with certified male and
-            female teachers. Serving families across the USA, UK,
-            Canada, UAE, and worldwide students with flexible schedules
-            for every time zone that suits you.
+            One-to-one live Quran classes in Tajweed,
+            Noorani Qaida, Hifz, Tafseer and Islamic
+            Studies with certified male and female teachers.
+            Serving families across the USA, UK, Canada,
+            UAE, and worldwide students with flexible
+            schedules for every time zone that suits you.
 
         </p>
 
 
     </div>
 
+
 </header>
 
 
+<!-- =====================================================
+     STUDENT AUTHENTICATION
+===================================================== -->
+
+<section class="supabase-auth-section">
+
+
+    <div class="supabase-auth-panel">
+
+
+        <h2>
+            🎓 Student Account
+        </h2>
+
+
+        <p>
+
+            Sign In to your Student Portal or create a new account.
+
+        </p>
+
+
+        <div id="homeAuthForms">
+
+
+            <div class="auth-grid">
+
+
+                <input
+                    id="homeAuthName"
+                    type="text"
+                    placeholder="Student Full Name"
+                    autocomplete="name"
+                >
+
+
+                <input
+                    id="homeAuthEmail"
+                    type="email"
+                    placeholder="Email Address"
+                    autocomplete="email"
+                >
+
+
+                <input
+                    id="homeAuthPassword"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                >
+
+
+            </div>
+
+
+            <div class="supabase-auth-actions">
+
+
+                <button
+                    type="button"
+                    class="btn-signup"
+                    onclick="homeSignUp()"
+                >
+
+                    Create Account
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn-signin"
+                    onclick="homeSignIn()"
+                >
+
+                    Sign In
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn-reset"
+                    onclick="homeResetPassword()"
+                >
+
+                    Forgot Password?
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            id="homeAuthLogged"
+            class="hidden"
+        >
+
+
+            <div class="supabase-userbar">
+
+
+                <strong id="homeAuthUser"></strong>
+
+
+                <a
+                    href="student-portal.html"
+                    class="portal-btn"
+                >
+
+                    Open Student Portal
+
+                </a>
+
+
+                <button
+                    type="button"
+                    onclick="homeSignOut()"
+                >
+
+                    Sign Out
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <p
+            id="homeAuthMsg"
+            class="auth-message"
+        ></p>
+
+
+    </div>
+
+
+</section>
+
 
 <!-- =====================================================
-     6 MAIN PROGRAM CARDS
+     PROGRAMS
 ===================================================== -->
 
 <section class="programs">
 
 
     <h2 class="programs-title">
-
         Our Programs
-
     </h2>
 
 
@@ -2114,22 +2370,29 @@ a{
 
         <article class="course-card">
 
+
             <img
                 src="qaida.jpg.jpg"
                 alt="Learn Noorani Qaida Online"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Learn Noorani Qaida
                 </h3>
 
+
                 <p>
-                    Start reading the Quran correctly with proper pronunciation.
+                    Start reading the Quran correctly
+                    with proper pronunciation.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2137,6 +2400,7 @@ a{
                     >
                         Details
                     </a>
+
 
                     <a
                         href="https://wa.me/923116876314"
@@ -2147,34 +2411,43 @@ a{
                         Register
                     </a>
 
+
                 </div>
+
 
             </div>
 
-        </article>
 
+        </article>
 
 
         <!-- CARD 2 -->
 
         <article class="course-card">
 
+
             <img
                 src="quran.jpg.jpg"
                 alt="Quran Reading with Tajweed"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Quran Reading with Tajweed
                 </h3>
 
+
                 <p>
-                    Master the rules of Tajweed for beautiful recitation.
+                    Master the rules of Tajweed
+                    for beautiful recitation.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2183,43 +2456,52 @@ a{
                         Details
                     </a>
 
+
                     <a
                         href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Register
                     </a>
 
+
                 </div>
+
 
             </div>
 
-        </article>
 
+        </article>
 
 
         <!-- CARD 3 -->
 
         <article class="course-card">
 
+
             <img
                 src="hifz.jpg.jpg"
                 alt="Memorize Quran Online"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Memorize Quran Online
                 </h3>
 
+
                 <p>
-                    Memorize with personalized Hifz plans and teachers.
+                    Memorize with personalized Hifz
+                    plans and teachers.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2228,43 +2510,52 @@ a{
                         Details
                     </a>
 
+
                     <a
                         href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Register
                     </a>
 
+
                 </div>
+
 
             </div>
 
-        </article>
 
+        </article>
 
 
         <!-- CARD 4 -->
 
         <article class="course-card">
 
+
             <img
                 src="tafseer.jpg.jpg"
                 alt="Learn Tafseer Online"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Learn Tafseer and Translation Online
                 </h3>
 
+
                 <p>
-                    Gain deep insights into the meanings of Holy Quran.
+                    Gain deep insights into the
+                    meanings of Holy Quran.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2273,43 +2564,52 @@ a{
                         Details
                     </a>
 
+
                     <a
                         href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Register
                     </a>
 
+
                 </div>
+
 
             </div>
 
-        </article>
 
+        </article>
 
 
         <!-- CARD 5 -->
 
         <article class="course-card">
 
+
             <img
                 src="arabic.jpg.jpg"
                 alt="Learn Arabic Online"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Learn Arabic Online
                 </h3>
 
+
                 <p>
-                    Arabic Language &amp; Grammar for kids and adults.
+                    Arabic Language &amp; Grammar
+                    for kids and adults.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2318,43 +2618,52 @@ a{
                         Details
                     </a>
 
+
                     <a
                         href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Register
                     </a>
 
+
                 </div>
+
 
             </div>
 
-        </article>
 
+        </article>
 
 
         <!-- CARD 6 -->
 
         <article class="course-card">
 
+
             <img
                 src="islamic.jpg.jpg.jpg"
                 alt="Islamic Studies Online"
             >
 
+
             <div class="course-content">
+
 
                 <h3>
                     Islamic Studies Online
                 </h3>
 
+
                 <p>
-                    Daily Dua's, Sunnah, Seerah and basic Fiqh.
+                    Daily Duas, Sunnah, Seerah
+                    and basic Fiqh.
                 </p>
 
+
                 <div class="course-buttons">
+
 
                     <a
                         href="#student-form"
@@ -2363,26 +2672,29 @@ a{
                         Details
                     </a>
 
+
                     <a
                         href="https://wa.me/923116876314"
                         class="btn-register"
                         target="_blank"
-                        rel="noopener noreferrer"
                     >
                         Register
                     </a>
 
+
                 </div>
 
+
             </div>
+
 
         </article>
 
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2465,8 +2777,8 @@ a{
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2561,8 +2873,8 @@ a{
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2587,8 +2899,9 @@ a{
 
     <p class="who-description">
 
-        Established to bridge traditional Islamic education with modern
-        technology, serving students worldwide with certified Quranic
+        Established to bridge traditional Islamic
+        education with modern technology, serving
+        students worldwide with certified Quranic
         scholars and comprehensive curriculum.
 
     </p>
@@ -2603,9 +2916,13 @@ a{
                 👥
             </div>
 
-            <h4>1000+</h4>
+            <h4>
+                1000+
+            </h4>
 
-            <p>Students</p>
+            <p>
+                Students
+            </p>
 
         </div>
 
@@ -2616,9 +2933,13 @@ a{
                 📚
             </div>
 
-            <h4>30+</h4>
+            <h4>
+                30+
+            </h4>
 
-            <p>Courses</p>
+            <p>
+                Courses
+            </p>
 
         </div>
 
@@ -2629,9 +2950,13 @@ a{
                 ⭐
             </div>
 
-            <h4>100+</h4>
+            <h4>
+                100+
+            </h4>
 
-            <p>Teachers</p>
+            <p>
+                Teachers
+            </p>
 
         </div>
 
@@ -2642,17 +2967,21 @@ a{
                 🌍
             </div>
 
-            <h4>50+</h4>
+            <h4>
+                50+
+            </h4>
 
-            <p>Countries</p>
+            <p>
+                Countries
+            </p>
 
         </div>
 
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2672,8 +3001,9 @@ a{
 
         <p class="why-subtitle">
 
-            Discover what makes our platform unique, with expert instructors
-            and tailored learning experiences designed for your success.
+            Discover what makes our platform unique,
+            with expert instructors and tailored
+            learning experiences designed for your success.
 
         </p>
 
@@ -2682,69 +3012,158 @@ a{
 
 
             <div class="why-card">
-                <div class="icon-box">📖</div>
-                <h4>AFFORDABLE FEE</h4>
-                <p>Budget-Friendly</p>
-            </div>
 
-
-            <div class="why-card">
-                <div class="icon-box">🎓</div>
-                <h4>MULTILINGUAL TUTORS</h4>
-                <p>Global Language Experts</p>
-            </div>
-
-
-            <div class="why-card">
-                <div class="icon-box">👥</div>
-                <h4>ONE ON ONE CLASSES</h4>
-                <p>Focuses on Individual Attention</p>
-            </div>
-
-
-            <div class="why-card">
-                <div class="icon-box">🏅</div>
-                <h4>SUBSTITUTE TEACHERS</h4>
-                <p>Dedicated Team of Substitute Teachers</p>
-            </div>
-
-
-            <div class="why-card">
-                <div class="icon-box">💳</div>
-                <h4>EASY ONLINE PAYMENTS</h4>
-                <p>One-Click Payments</p>
-            </div>
-
-
-            <div class="why-card">
-                <div class="icon-box">🌍</div>
-                <h4>GLOBAL REPUTATION</h4>
-                <p>Trusted by Students Worldwide</p>
-            </div>
-
-
-            <div class="why-card">
-                <div class="icon-box">❤️</div>
-                <h4>PROGRESS REPORT</h4>
-                <p>Knowledge Assessment</p>
-            </div>
-
-
-            <a href="student-portal.html" style="text-decoration: none; display: block;">
-                <div class="why-card">
-                    <div class="icon-box">🎯</div>
-                    <h4>ONLINE PORTAL</h4>
-                    <p>Student Classes Records &amp; History</p>
+                <div class="icon-box">
+                    📖
                 </div>
+
+                <h4>
+                    AFFORDABLE FEE
+                </h4>
+
+                <p>
+                    Budget-Friendly
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    🎓
+                </div>
+
+                <h4>
+                    MULTILINGUAL TUTORS
+                </h4>
+
+                <p>
+                    Global Language Experts
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    👥
+                </div>
+
+                <h4>
+                    ONE ON ONE CLASSES
+                </h4>
+
+                <p>
+                    Focuses on Individual Attention
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    🏅
+                </div>
+
+                <h4>
+                    SUBSTITUTE TEACHERS
+                </h4>
+
+                <p>
+                    Dedicated Team of Substitute Teachers
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    💳
+                </div>
+
+                <h4>
+                    EASY ONLINE PAYMENTS
+                </h4>
+
+                <p>
+                    One-Click Payments
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    🌍
+                </div>
+
+                <h4>
+                    GLOBAL REPUTATION
+                </h4>
+
+                <p>
+                    Trusted by Students Worldwide
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon-box">
+                    ❤️
+                </div>
+
+                <h4>
+                    PROGRESS REPORT
+                </h4>
+
+                <p>
+                    Knowledge Assessment
+                </p>
+
+            </div>
+
+
+            <a
+                href="student-portal.html"
+                style="
+                    text-decoration:none;
+                    display:block;
+                "
+            >
+
+                <div class="why-card">
+
+                    <div class="icon-box">
+                        🎯
+                    </div>
+
+                    <h4>
+                        ONLINE PORTAL
+                    </h4>
+
+                    <p>
+                        Student Classes Records &amp; History
+                    </p>
+
+                </div>
+
             </a>
 
 
         </div>
 
+
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2803,8 +3222,8 @@ a{
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2863,8 +3282,8 @@ a{
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2896,18 +3315,22 @@ a{
         </div>
 
 
-       <a 
-  href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
-  target="_blank"
-  class="trial-btn"
->
-  Claim Now
-</a>
+        <a
+            href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="trial-btn"
+        >
+
+            Claim Now
+
+        </a>
+
 
     </div>
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2927,8 +3350,8 @@ a{
         alt="Al Noor Quran Academy Fee Plans"
     >
 
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -2985,11 +3408,11 @@ a{
                 Select Gender
             </option>
 
-            <option>
+            <option value="Male">
                 Male
             </option>
 
-            <option>
+            <option value="Female">
                 Female
             </option>
 
@@ -3005,24 +3428,39 @@ a{
                 Select Country
             </option>
 
-            <option>United States</option>
+            <option>
+                United States
+            </option>
 
-            <option>United Kingdom</option>
+            <option>
+                United Kingdom
+            </option>
 
-            <option>Canada</option>
+            <option>
+                Canada
+            </option>
 
-            <option>Australia</option>
+            <option>
+                Australia
+            </option>
 
-            <option>UAE</option>
+            <option>
+                UAE
+            </option>
 
-            <option>Saudi Arabia</option>
+            <option>
+                Saudi Arabia
+            </option>
 
-            <option>Pakistan</option>
+            <option>
+                Pakistan
+            </option>
 
-            <option>Others</option>
+            <option>
+                Others
+            </option>
 
         </select>
-
 
 
         <h3>
@@ -3053,6 +3491,27 @@ a{
             required
         >
 
+
+        <h3>
+            Student Portal Password
+        </h3>
+
+
+        <input
+            type="password"
+            name="PortalPassword"
+            placeholder="Create Student Portal Password"
+            minlength="6"
+            required
+        >
+
+
+        <p class="password-help">
+
+            Minimum 6 characters.
+            This password will be used for the Student Portal.
+
+        </p>
 
 
         <h3>
@@ -3115,12 +3574,17 @@ a{
         ></textarea>
 
 
-        <button type="submit">
+        <button
+            type="submit"
+        >
+
             Submit Admission
+
         </button>
 
 
     </form>
+
 
 </section>
 
@@ -3134,36 +3598,44 @@ a{
 
     <div class="payment-section">
 
+
         <img
             src="payment.jpg.jpg.jpg"
             alt="Payment Methods"
         >
+
 
     </div>
 
 
     <div class="copyright-bar">
 
+
         <p>
             © Al Noor Quran Academy official
         </p>
+
 
     </div>
 
 
     <div class="contact-footer">
 
+
         <p>
             📧 alnoor.quran.academy@gmail.com
         </p>
+
 
         <p>
             📞 +92 311 6876314
         </p>
 
+
         <p>
             © 2026 Al Noor Quran Academy
         </p>
+
 
     </div>
 
@@ -3171,18 +3643,19 @@ a{
 </footer>
 
 
-
-<!-- =========================
-     FREE TRIAL FLOATING BUTTON
-========================= -->
+<!-- =====================================================
+     FLOATING FREE TRIAL
+===================================================== -->
 
 <a
-    href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
+    href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class."
     class="free-trial-float"
     target="_blank"
     rel="noopener noreferrer"
 >
+
     FREE TRIAL
+
 </a>
 
 
@@ -3195,14 +3668,13 @@ a{
     class="whatsapp-float"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Chat with Al Noor Quran Academy on WhatsApp"
+    aria-label="Chat with Academy on WhatsApp"
 >
 
 
     <svg
         class="whatsapp-svg"
         viewBox="0 0 32 32"
-        aria-hidden="true"
     >
 
         <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.92 2.93 4.65 4.11.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
@@ -3215,21 +3687,491 @@ a{
 </a>
 
 
+<!-- =====================================================
+     CONFIG + SUPABASE
+===================================================== -->
+
+<script src="config.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
 
 /* =====================================================
-   ADMISSION FORM -> WHATSAPP
+   SUPABASE CONFIG
 ===================================================== */
 
-function sendStudentForm(event){
+const SUPABASE_URL =
+    window.SUPABASE_CONFIG?.url ||
+    "YOUR_SUPABASE_URL";
+
+
+const SUPABASE_ANON_KEY =
+    window.SUPABASE_CONFIG?.anonKey ||
+    "YOUR_SUPABASE_ANON_KEY";
+
+
+let supabaseClient = null;
+
+
+if(
+    SUPABASE_URL !== "YOUR_SUPABASE_URL" &&
+    SUPABASE_ANON_KEY !== "YOUR_SUPABASE_ANON_KEY"
+){
+
+    supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+}
+
+
+/* =====================================================
+   AUTH MESSAGE
+===================================================== */
+
+function authMessage(message){
+
+    const element =
+        document.getElementById(
+            "homeAuthMsg"
+        );
+
+
+    if(element){
+
+        element.textContent =
+            message || "";
+
+    }
+
+}
+
+
+/* =====================================================
+   CHECK AUTH
+===================================================== */
+
+function authReady(){
+
+    if(!supabaseClient){
+
+        authMessage(
+            "Supabase is not configured. Please add your Supabase URL and Anon Key in config.js."
+        );
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* =====================================================
+   SIGN UP
+===================================================== */
+
+async function homeSignUp(){
+
+    if(!authReady()){
+        return;
+    }
+
+
+    const name =
+        document
+        .getElementById("homeAuthName")
+        .value
+        .trim();
+
+
+    const email =
+        document
+        .getElementById("homeAuthEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("homeAuthPassword")
+        .value;
+
+
+    if(
+        !name ||
+        !email ||
+        !password
+    ){
+
+        authMessage(
+            "Please enter name, email and password."
+        );
+
+        return;
+
+    }
+
+
+    if(password.length < 6){
+
+        authMessage(
+            "Password must contain at least 6 characters."
+        );
+
+        return;
+
+    }
+
+
+    authMessage(
+        "Creating your account..."
+    );
+
+
+    const {
+        data,
+        error
+    } =
+    await supabaseClient.auth.signUp({
+
+        email:email,
+
+        password:password,
+
+        options:{
+
+            data:{
+
+                full_name:name
+
+            }
+
+        }
+
+    });
+
+
+    if(error){
+
+        authMessage(
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    if(data.session){
+
+        await updateHomeAuth(
+            data.session.user
+        );
+
+
+        authMessage(
+            "Account created successfully."
+        );
+
+    }
+    else{
+
+        authMessage(
+            "Account created. Please confirm your email if email confirmation is enabled, then Sign In."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SIGN IN
+===================================================== */
+
+async function homeSignIn(){
+
+    if(!authReady()){
+        return;
+    }
+
+
+    const email =
+        document
+        .getElementById("homeAuthEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("homeAuthPassword")
+        .value;
+
+
+    if(
+        !email ||
+        !password
+    ){
+
+        authMessage(
+            "Please enter your email and password."
+        );
+
+        return;
+
+    }
+
+
+    authMessage(
+        "Signing in..."
+    );
+
+
+    const {
+        data,
+        error
+    } =
+    await supabaseClient.auth
+    .signInWithPassword({
+
+        email:email,
+
+        password:password
+
+    });
+
+
+    if(error){
+
+        authMessage(
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    await updateHomeAuth(
+        data.user
+    );
+
+
+    authMessage(
+        "Student account connected successfully."
+    );
+
+}
+
+
+/* =====================================================
+   PASSWORD RESET
+===================================================== */
+
+async function homeResetPassword(){
+
+    if(!authReady()){
+        return;
+    }
+
+
+    const email =
+        document
+        .getElementById("homeAuthEmail")
+        .value
+        .trim();
+
+
+    if(!email){
+
+        authMessage(
+            "Enter your email address first."
+        );
+
+        return;
+
+    }
+
+
+    const redirect =
+        window.location.origin +
+        window.location.pathname;
+
+
+    const {
+        error
+    } =
+    await supabaseClient.auth
+    .resetPasswordForEmail(
+
+        email,
+
+        {
+            redirectTo:redirect
+        }
+
+    );
+
+
+    if(error){
+
+        authMessage(
+            error.message
+        );
+
+    }
+    else{
+
+        authMessage(
+            "Password reset email sent. Please check your inbox."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SIGN OUT
+===================================================== */
+
+async function homeSignOut(){
+
+    if(!authReady()){
+        return;
+    }
+
+
+    await supabaseClient.auth.signOut();
+
+
+    await updateHomeAuth(
+        null
+    );
+
+
+    authMessage(
+        "You have been signed out."
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE AUTH UI
+===================================================== */
+
+async function updateHomeAuth(user){
+
+    const forms =
+        document.getElementById(
+            "homeAuthForms"
+        );
+
+
+    const logged =
+        document.getElementById(
+            "homeAuthLogged"
+        );
+
+
+    const userText =
+        document.getElementById(
+            "homeAuthUser"
+        );
+
+
+    if(
+        !forms ||
+        !logged
+    ){
+        return;
+    }
+
+
+    if(!user){
+
+        forms.classList.remove(
+            "hidden"
+        );
+
+        logged.classList.add(
+            "hidden"
+        );
+
+
+        if(userText){
+
+            userText.textContent =
+                "";
+
+        }
+
+
+        return;
+
+    }
+
+
+    forms.classList.add(
+        "hidden"
+    );
+
+
+    logged.classList.remove(
+        "hidden"
+    );
+
+
+    if(userText){
+
+        const name =
+            user.user_metadata?.full_name ||
+            user.email;
+
+
+        userText.textContent =
+            "Signed in: " + name;
+
+    }
+
+}
+
+
+/* =====================================================
+   ADMISSION FORM
+===================================================== */
+
+async function sendStudentForm(event){
 
     event.preventDefault();
 
 
+    if(!authReady()){
+        return;
+    }
+
+
     const form =
-        document.getElementById("studentForm");
+        document.getElementById(
+            "studentForm"
+        );
+
+
+    const submitBtn =
+        form.querySelector(
+            'button[type="submit"]'
+        );
 
 
     const studentName =
@@ -3237,7 +4179,9 @@ function sendStudentForm(event){
 
 
     const age =
-        form.Age.value.trim();
+        Number(
+            form.Age.value
+        );
 
 
     const gender =
@@ -3260,6 +4204,10 @@ function sendStudentForm(event){
         form.ParentEmail.value.trim();
 
 
+    const portalPassword =
+        form.PortalPassword.value;
+
+
     const course =
         form.Course.value;
 
@@ -3268,60 +4216,421 @@ function sendStudentForm(event){
         form.Message.value.trim();
 
 
-    const whatsappMessage =
+    if(portalPassword.length < 6){
 
-        "*New Student Admission*"
+        alert(
+            "Student Portal password must contain at least 6 characters."
+        );
 
-        + "\n\n"
+        return;
 
-        + "*Student Name:* "
-        + studentName
-
-        + "\n*Age:* "
-        + age
-
-        + "\n*Gender:* "
-        + gender
-
-        + "\n*Country:* "
-        + country
-
-        + "\n\n*Parent/Guardian:* "
-        + parentName
-
-        + "\n*Parent WhatsApp:* "
-        + parentPhone
-
-        + "\n*Parent Email:* "
-        + parentEmail
-
-        + "\n\n*Course:* "
-        + course
-
-        + "\n*Message:* "
-        + (message || "No additional message");
+    }
 
 
-    const whatsappURL =
+    submitBtn.disabled =
+        true;
 
-        "https://wa.me/923116876314?text="
 
-        + encodeURIComponent(
-            whatsappMessage
+    submitBtn.textContent =
+        "Connecting to Supabase...";
+
+
+    try{
+
+
+        /* ==========================================
+           CURRENT USER
+        ========================================== */
+
+        let {
+
+            data:{
+                user
+
+            }
+
+        } =
+        await supabaseClient.auth
+        .getUser();
+
+
+        let userId =
+            user?.id || null;
+
+
+        /* ==========================================
+           CREATE ACCOUNT
+        ========================================== */
+
+        if(!userId){
+
+
+            const {
+
+                data:signUpData,
+
+                error:signUpError
+
+            } =
+            await supabaseClient.auth
+            .signUp({
+
+                email:parentEmail,
+
+                password:portalPassword,
+
+                options:{
+
+                    data:{
+
+                        full_name:
+                            studentName
+
+                    }
+
+                }
+
+            });
+
+
+            if(
+                signUpError &&
+                !/already registered|already exists/i
+                    .test(
+                        signUpError.message
+                    )
+            ){
+
+                throw new Error(
+                    "Portal account could not be created: " +
+                    signUpError.message
+                );
+
+            }
+
+
+            userId =
+                signUpData?.user?.id ||
+                null;
+
+
+            /* ======================================
+               LOGIN EXISTING ACCOUNT
+            ====================================== */
+
+            if(!userId){
+
+
+                const {
+
+                    data:loginData,
+
+                    error:loginError
+
+                } =
+                await supabaseClient.auth
+                .signInWithPassword({
+
+                    email:parentEmail,
+
+                    password:portalPassword
+
+                });
+
+
+                if(loginError){
+
+                    throw new Error(
+                        "This email already has an account. Please Sign In to the Student Portal first."
+                    );
+
+                }
+
+
+                userId =
+                    loginData.user.id;
+
+            }
+
+        }
+
+
+        /* ==========================================
+           ADMISSION DATA
+        ========================================== */
+
+        const admissionData = {
+
+            user_id:userId,
+
+            student_name:studentName,
+
+            age:age,
+
+            gender:gender,
+
+            country:country,
+
+            parent_name:parentName,
+
+            parent_phone:parentPhone,
+
+            parent_email:parentEmail,
+
+            course:course,
+
+            message:
+                message || null
+
+        };
+
+
+        submitBtn.textContent =
+            "Saving Admission...";
+
+
+        /* ==========================================
+           SAVE ADMISSION
+        ========================================== */
+
+        const {
+
+            data:inserted,
+
+            error:insertError
+
+        } =
+        await supabaseClient
+        .from("admissions")
+        .insert(
+            admissionData
+        )
+        .select(
+            "id,student_code"
+        )
+        .single();
+
+
+        if(insertError){
+
+            throw insertError;
+
+        }
+
+
+        /* ==========================================
+           UPDATE PROFILE
+        ========================================== */
+
+        await supabaseClient
+        .from("profiles")
+        .update({
+
+            full_name:
+                studentName
+
+        })
+        .eq(
+            "id",
+            userId
         );
 
 
-    window.open(
-        whatsappURL,
-        "_blank",
-        "noopener,noreferrer"
+        /* ==========================================
+           UPDATE STUDENT RECORD
+        ========================================== */
+
+        await supabaseClient
+        .from("student_records")
+        .update({
+
+            course:
+                course
+
+        })
+        .eq(
+            "student_id",
+            userId
+        );
+
+
+        /* ==========================================
+           WHATSAPP
+        ========================================== */
+
+        const whatsappMessage =
+
+            "*New Student Admission*" +
+
+            "\n\n" +
+
+            "*Student Name:* " +
+            studentName +
+
+            "\n*Age:* " +
+            age +
+
+            "\n*Gender:* " +
+            gender +
+
+            "\n*Country:* " +
+            country +
+
+            "\n\n*Parent/Guardian:* " +
+            parentName +
+
+            "\n*Parent WhatsApp:* " +
+            parentPhone +
+
+            "\n*Parent Email:* " +
+            parentEmail +
+
+            "\n\n*Course:* " +
+            course +
+
+            "\n*Student ID:* " +
+            (
+                inserted.student_code ||
+                "Pending"
+            ) +
+
+            "\n*Message:* " +
+            (
+                message ||
+                "No additional message"
+            );
+
+
+        const whatsappURL =
+
+            "https://wa.me/923116876314?text=" +
+
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        /* ==========================================
+           SUCCESS
+        ========================================== */
+
+        form.reset();
+
+
+        alert(
+
+            "Admission submitted successfully!\n\n" +
+
+            "Your Student ID is: " +
+
+            (
+                inserted.student_code ||
+                "Pending"
+            ) +
+
+            "\n\n" +
+
+            "Your Student Portal account has been connected."
+
+        );
+
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        alert(
+
+            "Admission could not be submitted.\n\n" +
+
+            (
+                error.message ||
+                "Please try again."
+            )
+
+        );
+
+    }
+    finally{
+
+        submitBtn.disabled =
+            false;
+
+
+        submitBtn.textContent =
+            "Submit Admission";
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+async function initSupabaseHome(){
+
+    if(!supabaseClient){
+
+        authMessage(
+            "Supabase is not configured yet. Please update config.js."
+        );
+
+        return;
+
+    }
+
+
+    const {
+
+        data:{
+            session
+
+        }
+
+    } =
+    await supabaseClient.auth
+    .getSession();
+
+
+    await updateHomeAuth(
+        session?.user || null
+    );
+
+
+    supabaseClient.auth
+    .onAuthStateChange(
+
+        (_event,session)=>{
+
+            updateHomeAuth(
+                session?.user || null
+            );
+
+        }
+
     );
 
 }
+
+
+initSupabaseHome();
+
 
 </script>
 
 
 </body>
-
 </html>
