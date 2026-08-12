@@ -5,6 +5,13 @@
 
 <meta charset="UTF-8">
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://vxquqxiblysgzrpgfvgc.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
@@ -2179,6 +2186,13 @@ a{
 
 
 
+    <!-- STUDENT / ADMIN PORTALS -->
+    <div class="portal-links" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px auto 25px;">
+        <a href="student-portal.html" style="display:inline-block;padding:12px 24px;background:#D4AF37;color:#061d43;border:2px solid #FFD700;border-radius:50px;text-decoration:none;font-weight:800;">🎓 Student Portal</a>
+        <a href="admin-portal.html" style="display:inline-block;padding:12px 24px;background:#0b2d54;color:#FFD700;border:2px solid #FFD700;border-radius:50px;text-decoration:none;font-weight:800;">🔐 Admin Portal</a>
+    </div>
+
+
     <!-- PROFESSIONAL WELCOME -->
 
     <div class="welcome-box">
@@ -3517,99 +3531,60 @@ a{
    ADMISSION FORM -> WHATSAPP
 ===================================================== */
 
-function sendStudentForm(event){
+async function sendStudentForm(event){
 
     event.preventDefault();
 
+    const form = document.getElementById("studentForm");
 
-    const form =
-        document.getElementById("studentForm");
+    const studentName = form.StudentName.value.trim();
+    const age = Number(form.Age.value);
+    const gender = form.Gender.value;
+    const country = form.Country.value;
+    const parentName = form.ParentName.value.trim();
+    const parentPhone = form.ParentPhone.value.trim();
+    const parentEmail = form.ParentEmail.value.trim();
+    const course = form.Course.value;
+    const message = form.Message.value.trim();
 
+    const { data, error } = await sb.from("admissions").insert({
+        student_name: studentName,
+        age: age,
+        gender: gender,
+        country: country,
+        parent_name: parentName,
+        parent_phone: parentPhone,
+        parent_email: parentEmail,
+        course: course,
+        message: message || null,
+        status: "pending"
+    }).select("student_code").single();
 
-    const studentName =
-        form.StudentName.value.trim();
-
-
-    const age =
-        form.Age.value.trim();
-
-
-    const gender =
-        form.Gender.value;
-
-
-    const country =
-        form.Country.value;
-
-
-    const parentName =
-        form.ParentName.value.trim();
-
-
-    const parentPhone =
-        form.ParentPhone.value.trim();
-
-
-    const parentEmail =
-        form.ParentEmail.value.trim();
-
-
-    const course =
-        form.Course.value;
-
-
-    const message =
-        form.Message.value.trim();
-
+    if (error) {
+        alert("Admission could not be saved. Please try again.\n\n" + error.message);
+        return;
+    }
 
     const whatsappMessage =
-
         "*New Student Admission*"
-
         + "\n\n"
-
-        + "*Student Name:* "
-        + studentName
-
-        + "\n*Age:* "
-        + age
-
-        + "\n*Gender:* "
-        + gender
-
-        + "\n*Country:* "
-        + country
-
-        + "\n\n*Parent/Guardian:* "
-        + parentName
-
-        + "\n*Parent WhatsApp:* "
-        + parentPhone
-
-        + "\n*Parent Email:* "
-        + parentEmail
-
-        + "\n\n*Course:* "
-        + course
-
-        + "\n*Message:* "
-        + (message || "No additional message");
-
+        + "*Student ID:* " + (data?.student_code || "Pending")
+        + "\n*Student Name:* " + studentName
+        + "\n*Age:* " + age
+        + "\n*Gender:* " + gender
+        + "\n*Country:* " + country
+        + "\n\n*Parent/Guardian:* " + parentName
+        + "\n*Parent WhatsApp:* " + parentPhone
+        + "\n*Parent Email:* " + parentEmail
+        + "\n\n*Course:* " + course
+        + "\n*Message:* " + (message || "No additional message");
 
     const whatsappURL =
+        "https://wa.me/923130934215?text=" + encodeURIComponent(whatsappMessage);
 
-        "https://wa.me/923130934215?text="
-
-        + encodeURIComponent(
-            whatsappMessage
-        );
-
-
-    window.open(
-        whatsappURL,
-        "_blank",
-        "noopener,noreferrer"
-    );
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    alert("Application saved successfully. Student ID: " + (data?.student_code || "Pending"));
+    form.reset();
 
 }
 
