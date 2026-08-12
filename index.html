@@ -3691,9 +3691,6 @@ textarea{
      CONFIG + SUPABASE
 ===================================================== -->
 
-<script src="config.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
@@ -3705,29 +3702,20 @@ textarea{
 ===================================================== */
 
 const SUPABASE_URL =
-    window.SUPABASE_CONFIG?.url ||
-    "YOUR_SUPABASE_URL";
-
+    "https://vxquqxiblysgzrpgfvgc.supabase.co";
 
 const SUPABASE_ANON_KEY =
-    window.SUPABASE_CONFIG?.anonKey ||
-    "YOUR_SUPABASE_ANON_KEY";
-
+    "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
 
 let supabaseClient = null;
 
-
-if(
-    SUPABASE_URL !== "YOUR_SUPABASE_URL" &&
-    SUPABASE_ANON_KEY !== "YOUR_SUPABASE_ANON_KEY"
-){
-
-    supabaseClient =
-        window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_ANON_KEY
-        );
-
+try {
+    supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+} catch (error) {
+    console.error("Supabase initialization failed:", error);
 }
 
 
@@ -3762,7 +3750,7 @@ function authReady(){
     if(!supabaseClient){
 
         authMessage(
-            "Supabase is not configured. Please add your Supabase URL and Anon Key in config.js."
+            "Supabase connection could not be initialized. Please check the Supabase configuration."
         );
 
         return false;
@@ -4585,7 +4573,7 @@ async function initSupabaseHome(){
     if(!supabaseClient){
 
         authMessage(
-            "Supabase is not configured yet. Please update config.js."
+            "Supabase connection is not available. Please check the Supabase configuration."
         );
 
         return;
