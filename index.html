@@ -36,22 +36,22 @@ rel="stylesheet"
 <style>
 
 /* =====================================================
-   GLOBAL
+   NEW PROFESSIONAL ROYAL EMERALD COLOR PALETTE
 ===================================================== */
 
 :root{
 
-    --blue:#061d43;
-    --dark-blue:#071f3d;
-    --light-blue:#0b2d54;
+    --blue:#0a192f;           /* Deep Slate Navy (Background) */
+    --dark-blue:#061121;      /* Darker Slate */
+    --light-blue:#112240;     /* Card Background */
 
-    --green:#087a43;
+    --green:#0b4f34;          /* Royal Emerald Green Header */
 
-    --gold:#B8860B;
-    --bright-gold:#FFD700;
+    --gold:#d4af37;           /* Metallic Warm Gold */
+    --bright-gold:#f3ca52;    /* Vibrant Accent Gold */
 
     --white:#ffffff;
-    --light-text:#E0E7FF;
+    --light-text:#e2e8f0;     /* Subtle Crisp Text */
 
 }
 
@@ -159,7 +159,7 @@ a{
 
     margin:0;
 
-    color:var(--gold);
+    color:var(--bright-gold);
 
     font-size:60px;
 
@@ -168,6 +168,8 @@ a{
     line-height:1;
 
     letter-spacing:3px;
+
+    text-shadow: 0 4px 15px rgba(243, 202, 82, 0.2);
 
 }
 
@@ -267,11 +269,11 @@ a{
 
         linear-gradient(
             135deg,
-            #FFD700,
-            #B8860B
+            var(--bright-gold),
+            var(--gold)
         );
 
-    color:#061d43;
+    color:#0a192f;
 
 }
 
@@ -284,7 +286,7 @@ a{
 
         0 12px 28px rgba(0,0,0,.40),
 
-        0 0 18px rgba(255,215,0,.30);
+        0 0 18px rgba(243,202,82,.40);
 
 }
 
@@ -303,13 +305,13 @@ a{
 
     text-align:center;
 
-    background:rgba(255,255,255,.06);
+    background:rgba(17, 34, 64, 0.8);
 
-    border:1px solid rgba(255,215,0,.35);
+    border:1px solid rgba(243,202,82,.35);
 
     border-radius:14px;
 
-    box-shadow:0 8px 22px rgba(0,0,0,.18);
+    box-shadow:0 8px 22px rgba(0,0,0,.3);
 
 }
 
@@ -344,7 +346,7 @@ a{
 
 .welcome-title span{
 
-    color:var(--gold);
+    color:var(--bright-gold);
 
     font-weight:900;
 
@@ -387,15 +389,15 @@ a{
 
     width:100%;
 
-    background:var(--green);
+    background: linear-gradient(135deg, var(--green), #073824);
 
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(243,202,82,.25);
 
     border-radius:12px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 22px rgba(0,0,0,.25);
+    box-shadow:0 8px 22px rgba(0,0,0,.35);
 
 }
 
@@ -488,11 +490,11 @@ a{
 
         linear-gradient(
             145deg,
-            #0b2d54,
-            #071f3d
+            var(--light-blue),
+            var(--dark-blue)
         );
 
-    border:2px solid var(--gold);
+    border:1px solid var(--gold);
 
     border-radius:15px;
 
@@ -579,7 +581,7 @@ a{
 
 .btn-details{
 
-    background:#315fa5;
+    background:#1e3a5f;
 
     color:#fff;
 
@@ -598,7 +600,7 @@ a{
 
 .btn-details:hover{
 
-    background:#3f73c0;
+    background:#2b5288;
 
     transform:translateY(-2px);
 
@@ -609,7 +611,7 @@ a{
 
     background:var(--bright-gold);
 
-    color:#08203d;
+    color:#0a192f;
 
     padding:11px 25px;
 
@@ -637,7 +639,7 @@ a{
 
 .regular-courses{
 
-    background:#f8f9fa;
+    background:#f8fafc;
 
     padding:75px 20px;
 
@@ -648,7 +650,7 @@ a{
 
 .regular-courses h2{
 
-    color:#1a1a1a;
+    color:#0f172a;
 
     font-size:2.6em;
 
@@ -665,7 +667,7 @@ a{
 
     height:3px;
 
-    background:var(--bright-gold);
+    background:var(--gold);
 
     margin:0 auto 40px;
 
@@ -706,6 +708,8 @@ a{
 
     box-shadow:0 2px 8px rgba(0,0,0,.06);
 
+    border-left: 4px solid var(--green);
+
 }
 
 
@@ -726,11 +730,11 @@ a{
 
 .regular-item p{
 
-    color:#333;
+    color:#334155;
 
     font-size:1em;
 
-    font-weight:500;
+    font-weight:600;
 
 }
 
@@ -741,7 +745,7 @@ a{
 
 .short-courses{
 
-    background:#1E3A8A;
+    background:var(--dark-blue);
 
     padding:60px 20px;
 
@@ -781,15 +785,9 @@ a{
 
 .short-course{
 
-    background:
+    background:var(--light-blue);
 
-        linear-gradient(
-            145deg,
-            #0b2d54,
-            #071f3d
-        );
-
-    border:1px solid rgba(255,215,0,.30);
+    border:1px solid rgba(243,202,82,.20);
 
     border-radius:14px;
 
@@ -848,11 +846,11 @@ a{
 
 .who-we-are h2{
 
-    color:#1a1a1a;
+    color:#0f172a;
 
     font-size:2.2em;
 
-    font-weight:700;
+    font-weight:800;
 
     margin-bottom:10px;
 
@@ -861,7 +859,7 @@ a{
 
 .who-we-are h3{
 
-    color:#2c2c2c;
+    color:#334155;
 
     font-size:1.3em;
 
@@ -872,7 +870,7 @@ a{
 
 .who-description{
 
-    color:#555;
+    color:#64748b;
 
     max-width:750px;
 
@@ -904,13 +902,15 @@ a{
 
     max-width:200px;
 
-    background:#fff;
+    background:#f8fafc;
 
     border-radius:10px;
 
     padding:25px 15px;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.07);
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+
+    border-bottom: 3px solid var(--green);
 
 }
 
@@ -947,7 +947,7 @@ a{
 
 .stat-card h4{
 
-    color:#1a1a1a;
+    color:#0f172a;
 
     font-size:2em;
 
@@ -958,7 +958,7 @@ a{
 
 .stat-card p{
 
-    color:#666;
+    color:#64748b;
 
 }
 
@@ -971,7 +971,7 @@ a{
 
     padding:60px 20px;
 
-    background:#1E3A8A;
+    background:var(--blue);
 
     text-align:center;
 
@@ -993,7 +993,7 @@ a{
 
 .why-subtitle{
 
-    color:#E0E7FF;
+    color:var(--light-text);
 
     max-width:700px;
 
@@ -1018,9 +1018,9 @@ a{
 
 .why-card{
 
-    background:#173985;
+    background:var(--light-blue);
 
-    border:2px solid var(--bright-gold);
+    border:1px solid var(--gold);
 
     border-radius:15px;
 
@@ -1035,7 +1035,9 @@ a{
 
     transform:translateY(-8px);
 
-    box-shadow:0 0 20px var(--bright-gold);
+    box-shadow:0 0 20px rgba(243,202,82, 0.2);
+
+    border-color:var(--bright-gold);
 
 }
 
@@ -1048,7 +1050,7 @@ a{
 
     background:var(--bright-gold);
 
-    color:#1E3A8A;
+    color:#0a192f;
 
     border-radius:18px;
 
@@ -1080,7 +1082,7 @@ a{
 
 .why-card p{
 
-    color:#E0E7FF;
+    color:var(--light-text);
 
     font-size:.9em;
 
@@ -1095,7 +1097,7 @@ a{
 
     padding:60px 20px;
 
-    background:var(--blue);
+    background:var(--dark-blue);
 
 }
 
@@ -1163,21 +1165,21 @@ a{
 
 .trust-gold h3{
 
-    color:var(--gold);
+    color:var(--bright-gold);
 
 }
 
 
 .trust-blue{
 
-    border:2px solid #3b82f6;
+    border:2px solid #38bdf8;
 
 }
 
 
 .trust-blue h3{
 
-    color:#3b82f6;
+    color:#38bdf8;
 
 }
 
@@ -1190,7 +1192,7 @@ a{
 
     padding:75px 20px;
 
-    background:#1E3A8A;
+    background:var(--blue);
 
 }
 
@@ -1237,7 +1239,7 @@ a{
 
 .step p{
 
-    color:#E0E7FF;
+    color:var(--light-text);
 
     line-height:1.6;
 
@@ -1254,11 +1256,11 @@ a{
 
         linear-gradient(
             135deg,
-            #FFD700,
-            #FFA500
+            var(--bright-gold),
+            var(--gold)
         );
 
-    border:3px solid #1E3A8A;
+    border:3px solid var(--light-blue);
 
     border-radius:20px;
 
@@ -1266,7 +1268,7 @@ a{
 
     margin:40px 20px;
 
-    box-shadow:0 8px 20px rgba(30,58,138,.25);
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
 
 }
 
@@ -1306,7 +1308,7 @@ a{
 
 .trial-text h3{
 
-    color:#1E3A8A;
+    color:#0a192f;
 
     font-size:1.8em;
 
@@ -1317,7 +1319,7 @@ a{
 
 .trial-text p{
 
-    color:#1E3A8A;
+    color:#0a192f;
 
     font-weight:600;
 
@@ -1326,9 +1328,9 @@ a{
 
 .trial-btn{
 
-    background:#1E3A8A;
+    background:#0a192f;
 
-    color:#FFD700;
+    color:var(--bright-gold);
 
     padding:15px 35px;
 
@@ -1347,69 +1349,7 @@ a{
 
     background:#fff;
 
-    color:#1E3A8A;
-
-}
-
-
-/* =====================================================
-   FLOATING FREE TRIAL
-===================================================== */
-
-.free-trial-float{
-
-    position:fixed;
-
-    left:20px;
-
-    bottom:25px;
-
-    z-index:999;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:12px 18px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #FFD700,
-            #FFA500
-        );
-
-    color:#071f3d;
-
-    border:2px solid #fff;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:900;
-
-    box-shadow:0 6px 20px rgba(0,0,0,.35);
-
-    animation:trialPulse 2s infinite;
-
-}
-
-
-@keyframes trialPulse{
-
-    0%,100%{
-        box-shadow:0 6px 20px rgba(0,0,0,.35);
-    }
-
-    50%{
-        box-shadow:0 6px 25px rgba(255,215,0,.65);
-    }
+    color:#0a192f;
 
 }
 
@@ -1422,7 +1362,7 @@ a{
 
     padding:60px 20px;
 
-    background:#0A1F44;
+    background:var(--dark-blue);
 
     text-align:center;
 
@@ -1448,7 +1388,7 @@ a{
 
     border-radius:15px;
 
-    border:2px solid var(--bright-gold);
+    border:2px solid var(--gold);
 
 }
 
@@ -1489,14 +1429,14 @@ a{
 
     border-radius:15px;
 
-    border:2px solid var(--gold);
+    border:1px solid var(--gold);
 
 }
 
 
 .student-form h3{
 
-    color:var(--gold);
+    color:var(--bright-gold);
 
     margin:25px 0 10px;
 
@@ -1524,7 +1464,11 @@ a{
 
     border-radius:10px;
 
-    border:2px solid #4a70b0;
+    border:1px solid #233554;
+
+    background:var(--dark-blue);
+
+    color:#fff;
 
     font-family:inherit;
 
@@ -1585,13 +1529,13 @@ a{
 
 .payment-section{
 
-    background:#0A1F44;
+    background:var(--dark-blue);
 
     padding:20px;
 
     text-align:center;
 
-    border-bottom:2px solid var(--bright-gold);
+    border-bottom:1px solid var(--gold);
 
 }
 
@@ -1618,7 +1562,7 @@ a{
 
 .copyright-bar p{
 
-    color:#1E3A8A;
+    color:#0a192f;
 
     font-weight:800;
 
@@ -1627,7 +1571,7 @@ a{
 
 .contact-footer{
 
-    background:#071f3d;
+    background:var(--dark-blue);
 
     padding:30px 20px;
 
@@ -1697,6 +1641,47 @@ a{
 
     fill:#fff;
 
+}
+
+
+/* =====================================================
+   FLOATING FREE TRIAL
+===================================================== */
+
+.free-trial-float {
+    position: fixed;
+    left: 15px;
+    right: auto;
+    bottom: 25px;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    background: var(--bright-gold);
+    color: #0a192f;
+
+    border: 2px solid #fff;
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.30);
+
+    transition: all 0.3s ease;
+}
+
+.free-trial-float:hover {
+    background: #fff;
+    color: #0a192f;
+    transform: translateY(-2px);
 }
 
 
@@ -3190,44 +3175,6 @@ a{
 <!-- =========================
      FREE TRIAL FLOATING BUTTON
 ========================= -->
-
-<style>
-.free-trial-float {
-    position: fixed;
-    left: 15px;
-    right: auto;
-    bottom: 25px;
-
-    z-index: 99999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 22px;
-
-    background: #D4AF37;
-    color: #FFFFFF;
-
-    border: 2px solid #FFD700;
-    border-radius: 50px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.30);
-
-    transition: all 0.3s ease;
-}
-
-.free-trial-float:hover {
-    background: #B8860B;
-    color: #FFFFFF;
-    transform: translateY(-2px);
-}
-</style>
 
 <a
     href="https://wa.me/923116876314?text=Assalamu%20Alaikum%0A%0AI%20would%20like%20to%20book%20a%20free%20trial%20class.%20Could%20you%20please%20share%20the%20enrollment%20details%2C%20available%20timings%2C%20and%20the%20information%20required%20to%20schedule%20the%20trial%20session%3F%0A%0AI%20look%20forward%20to%20your%20response.%0A%0AJazakAllahu%20Khair."
