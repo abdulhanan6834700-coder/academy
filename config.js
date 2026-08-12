@@ -1,17 +1,15 @@
 // Supabase Project Credentials
 const SUPABASE_URL = "https://vxquqxiblysgzrpgfvgc.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
 
-// ⚠️ Yahan apni Supabase Dashboard ki real ANON key daalein (Jo eyJhbGci... se shuru hoti hai)
-const SUPABASE_ANON_KEY = "YOUR_ACTUAL_SUPABASE_ANON_KEY_HERE"; 
-
-// Initialize Supabase Client globally
+// Initialize Supabase Client
 let supabaseClient = null;
 
 if (typeof window.supabase !== 'undefined') {
   supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 }
 
-// Global Configuration object for backward compatibility
+// Global Config
 window.SUPABASE_CONFIG = {
   url: SUPABASE_URL,
   anonKey: SUPABASE_ANON_KEY,
