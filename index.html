@@ -15,7 +15,7 @@
 
 <meta
     name="description"
-    content="Al Noor Quran Academy offers online Quran classes with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies for kids and adults."
+    content="One-to-one online Quran classes for kids and adults with qualified teachers. Learn Noorani Qaida, Quran Reading with Tajweed, Hifz, Tafseer, Arabic and Islamic Studies at Al Noor Quran Academy."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -419,22 +419,17 @@ textarea{
     width:100%;
 
     background:
-        linear-gradient(
-            135deg,
-            var(--green),
-            #073824
-        );
+        linear-gradient(135deg, #ffffff 0%, #f4f4f4 100%);
 
-    border:
-        1px solid
-        rgba(243,202,82,.25);
+    border:1px solid #d4af37;
+    border-left:5px solid #d4af37;
 
     border-radius:12px;
 
     overflow:hidden;
 
     box-shadow:
-        0 8px 22px rgba(0,0,0,.35);
+        0 12px 30px rgba(0,0,0,.12);
 
 }
 
@@ -443,7 +438,7 @@ textarea{
 
     padding:20px 18px 12px;
 
-    color:#fff;
+    color:#111111;
 
     font-size:36px;
 
@@ -464,7 +459,7 @@ textarea{
 
     padding:0 25px 25px;
 
-    color:#fff;
+    color:#333333;
 
     font-size:16px;
 
@@ -682,14 +677,6 @@ textarea{
 
     text-align:center;
 
-}
-
-.auth-note{
-    margin-top:10px;
-    color:var(--light-text);
-    font-size:13px;
-    text-align:center;
-    line-height:1.5;
 }
 
 
@@ -2068,24 +2055,143 @@ textarea{
 </style>
 
 
-<style>
+<style id="professional-description-style">
+.description,.description-box,.course-description,.card-description,.content-box,.welcome-box{background:linear-gradient(135deg,#ffffff 0%,#f4f4f4 100%) !important;color:#171717 !important;border:1px solid #d4af37 !important;border-left:4px solid #d4af37 !important;border-radius:14px !important;box-shadow:0 10px 28px rgba(0,0,0,.10) !important;}
+.description p,.description-box p,.course-description p,.card-description p,.content-box p,.welcome-box p{color:#333 !important;line-height:1.75 !important;}
+.description h2,.description h3,.description h4,.description-box h2,.description-box h3,.description-box h4,.course-description h2,.course-description h3,.course-description h4{color:#111 !important;}
+</style>
+
+<style id="visible-hero-description-fix">
+.content-green{
+    background: linear-gradient(135deg,#111111 0%,#050505 100%) !important;
+    border: 1px solid #d4af37 !important;
+    border-left: 5px solid #d4af37 !important;
+    border-radius: 16px !important;
+    padding: 28px 32px !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,.35) !important;
+}
+.content-green .main-heading{
+    color:#f3ca52 !important;
+    font-weight:800 !important;
+    text-shadow:0 1px 8px rgba(243,202,82,.18);
+}
+.content-green .hero-description{
+    color:#ffffff !important;
+    background:transparent !important;
+    font-size:17px !important;
+    font-weight:400 !important;
+    line-height:1.9 !important;
+    opacity:1 !important;
+    display:block !important;
+}
+@media(max-width:600px){
+    .content-green{padding:22px 18px !important;}
+    .content-green .hero-description{font-size:14px !important;line-height:1.75 !important;}
+}
+</style>
+
+
+<!-- GOOGLE SEARCH APPEARANCE / BRAND SETUP -->
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta name="application-name" content="Al Noor Quran Academy">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="googlebot" content="index,follow">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="./">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Al Noor Quran Academy | Online Quran Classes">
+<meta property="og:description" content="One-to-one online Quran classes for kids and adults with qualified teachers. Learn Noorani Qaida, Quran Reading with Tajweed, Hifz, Tafseer, Arabic and Islamic Studies.">
+<meta property="og:site_name" content="Al Noor Quran Academy">
+<meta property="og:image" content="logo.png">
+<meta property="og:image:alt" content="Al Noor Quran Academy logo">
+
+<!-- JSON-LD is created with the live site URL so it also works on GitHub Pages/repository paths. -->
+<script id="academy-structured-data" type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"EducationalOrganization",
+  "name":"Al Noor Quran Academy",
+  "alternateName":"Al Noor Quran Academy",
+  "description":"Online Quran classes for kids and adults with Tajweed, Noorani Qaida, Hifz, Tafseer, Arabic and Islamic Studies.",
+  "logo":"logo.png"
+}
+</script>
+<!-- END GOOGLE SEARCH APPEARANCE / BRAND SETUP -->
+
+<style id="professional-black-white-theme">
 /* =====================================================
-   BLACK & WHITE PROFESSIONAL THEME
-   Functionality and layout preserved
+   BLACK + WHITE PROFESSIONAL BACKGROUND / SECTIONS
+   Existing content and functionality preserved
 ===================================================== */
-body{background:#000!important;color:#fff;}
+html{background:#000;}
+body{background:#000!important;color:#fff!important;}
+.hero,header,.header,nav,.navbar,.content-green,.green-section{background:#000!important;color:#fff!important;}
 .regular-courses,.who-we-are{background:#fff!important;color:#111!important;}
-.regular-courses h2,.regular-courses h3,.regular-courses p,.regular-courses li,
-.who-we-are h2,.who-we-are h3,.who-we-are p,.who-we-are li{color:#111!important;}
+.regular-courses h2,.regular-courses h3,.regular-courses h4,.regular-courses p,.regular-courses li,
+.who-we-are h2,.who-we-are h3,.who-we-are h4,.who-we-are p,.who-we-are li{color:#111!important;}
 .card,.course-card,.short-course,.why-card,.trust-card,.auth-box,.supabase-auth-box{background:#fff!important;color:#111!important;}
-.course-card h3,.course-card h4,.course-card p,.course-content,.short-course h3,.short-course p,
-.why-card h3,.why-card p,.trust-card h3,.trust-card p{color:#111!important;}
+.course-card h3,.course-card h4,.course-card p,.course-content,.course-content h3,.short-course h3,.short-course p,
+.why-card h3,.why-card h4,.why-card p,.trust-card h3,.trust-card h4,.trust-card p{color:#111!important;}
+.description,.description-box,.course-description,.card-description,.content-box,.welcome-box{color:#111!important;}
 input,select,textarea{background:#fff!important;color:#111!important;border:1px solid #111!important;}
 input::placeholder,textarea::placeholder{color:#666!important;}
-.content-green,.green-section{background:#000!important;}
-nav,.header,.navbar{background:#000!important;}
-footer{background:#000!important;color:#fff!important;}
+.main-footer,footer{background:#000!important;color:#fff!important;}
+.contact-footer p,.copyright-bar p,.main-footer p{color:#fff!important;}
+
+/* About / Contact / other information sections */
+.who-we-are,.contact-footer,.regular-courses,.trust-section,.why-us,.short-courses,.admission-section{
+    position:relative;
+}
+.who-we-are,.regular-courses{
+    border-top:1px solid #d4af37;
+    border-bottom:1px solid #d4af37;
+}
+
+/* Course images never overflow their cards */
+.course-card{overflow:hidden!important;min-width:0;}
+.course-card img{
+    width:100%!important;
+    max-width:100%!important;
+    height:230px!important;
+    max-height:230px!important;
+    object-fit:cover!important;
+    display:block!important;
+    margin:0!important;
+}
+
+/* Professional footer navigation */
+.site-footer-nav{
+    background:#080808!important;
+    border-top:1px solid #d4af37;
+    border-bottom:1px solid #222;
+}
+.site-footer-nav a{color:#fff!important;}
+.site-footer-nav a:hover{color:#f3ca52!important;}
+.site-footer-nav .student-portal-link{color:#000!important;background:#d4af37!important;}
+.site-footer-nav .student-portal-link:hover{background:#f3ca52!important;}
 </style>
+
+<script>
+(function(){
+    // Use the actual live URL for Google structured data without hard-coding a domain.
+    var origin = window.location.origin;
+    var base = origin + window.location.pathname.replace(/[^/]*$/, '');
+    var data = {
+        "@context":"https://schema.org",
+        "@type":"EducationalOrganization",
+        "name":"Al Noor Quran Academy",
+        "alternateName":"Al Noor Quran Academy",
+        "url":window.location.href.split('#')[0],
+        "logo":new URL('logo.png', base).href,
+        "description":"One-to-one online Quran classes for kids and adults with qualified teachers. Learn Noorani Qaida, Quran Reading with Tajweed, Hifz, Tafseer, Arabic and Islamic Studies.",
+        "sameAs":[]
+    };
+    var el=document.getElementById('academy-structured-data');
+    if(el) el.textContent=JSON.stringify(data);
+})();
+</script>
 
 </head>
 
@@ -2104,7 +2210,7 @@ footer{background:#000!important;color:#fff!important;}
 
 
         <img
-            src="logo.jpg.jpg"
+            src="logo.png"
             alt="Al Noor Quran Academy Logo"
             class="main-logo"
         >
@@ -2170,7 +2276,7 @@ footer{background:#000!important;color:#fff!important;}
 
     <!-- WELCOME -->
 
-    <div class="welcome-box">
+    <div class="welcome-box" id="about">
 
 
         <div class="welcome-small">
@@ -2372,10 +2478,6 @@ footer{background:#000!important;color:#fff!important;}
             class="auth-message"
         ></p>
 
-        <p class="auth-note">
-            New students can create an account here. Use the same email and password to open the Student Portal.
-        </p>
-
 
     </div>
 
@@ -2387,7 +2489,7 @@ footer{background:#000!important;color:#fff!important;}
      PROGRAMS
 ===================================================== -->
 
-<section class="programs">
+<section class="programs" id="programs">
 
 
     <h2 class="programs-title">
@@ -3020,7 +3122,7 @@ footer{background:#000!important;color:#fff!important;}
      WHY CHOOSE US
 ===================================================== -->
 
-<section class="why-us">
+<section class="why-us" id="why-us">
 
 
     <div class="container">
@@ -3625,6 +3727,77 @@ footer{background:#000!important;color:#fff!important;}
      FOOTER
 ===================================================== -->
 
+
+<!-- PROFESSIONAL FOOTER NAVIGATION -->
+<style>
+.site-footer-nav{
+  background:#080808;
+  border-top:1px solid #d4af37;
+  padding:42px 20px 28px;
+  text-align:center;
+}
+.site-footer-nav .footer-brand{
+  color:#f3ca52;
+  font-size:23px;
+  font-weight:800;
+  margin-bottom:22px;
+}
+.site-footer-nav .footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:12px 24px;
+  max-width:1100px;
+  margin:0 auto 24px;
+}
+.site-footer-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  transition:.25s ease;
+}
+.site-footer-nav a:hover{color:#f3ca52;}
+.site-footer-nav .student-portal-link{
+  color:#000;
+  background:#d4af37;
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:800;
+  box-shadow:0 5px 15px rgba(212,175,55,.2);
+}
+.site-footer-nav .student-portal-link:hover{
+  color:#000;
+  background:#f3ca52;
+  transform:translateY(-1px);
+}
+.site-footer-nav .footer-note{
+  color:#aaa;
+  font-size:13px;
+}
+@media(max-width:600px){
+  .site-footer-nav{padding:34px 14px 24px;}
+  .site-footer-nav .footer-links{gap:14px 17px;}
+  .site-footer-nav a{font-size:14px;}
+}
+</style>
+
+<div class="site-footer-nav">
+  <div class="footer-brand">Al Noor Quran Academy</div>
+  <nav class="footer-links" aria-label="Footer Navigation">
+    <a href="index.html">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#programs">Courses</a>
+    <a href="#why-us">Why Choose Us</a>
+    <a href="#student-form">Registration</a>
+    <a href="student-portal.html" class="student-portal-link">🎓 Student Portal</a>
+    <a href="#contact">Contact Us</a>
+    
+  </nav>
+  <div class="footer-note">Learn Quran • Learn Deen • Live Your Faith</div>
+</div>
+
 <footer class="main-footer">
 
 
@@ -3651,7 +3824,7 @@ footer{background:#000!important;color:#fff!important;}
     </div>
 
 
-    <div class="contact-footer">
+    <div class="contact-footer" id="contact">
 
 
         <p>
@@ -3723,12 +3896,14 @@ footer{background:#000!important;color:#fff!important;}
      CONFIG + SUPABASE
 ===================================================== -->
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 <script>
 
+
 /* =====================================================
-   SUPABASE LIBRARY LOADER + CONFIG
-   Loads jsDelivr first and automatically falls back to
-   unpkg if the first CDN is unavailable.
+   SUPABASE CONFIG
 ===================================================== */
 
 const SUPABASE_URL =
@@ -3738,83 +3913,15 @@ const SUPABASE_ANON_KEY =
     "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
 
 let supabaseClient = null;
-let supabaseLoadPromise = null;
-let supabaseInitError = null;
 
-function loadScript(src){
-
-    return new Promise((resolve,reject)=>{
-
-        const script = document.createElement("script");
-
-        script.src = src;
-        script.async = true;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error("Unable to load Supabase library."));
-
-        document.head.appendChild(script);
-
-    });
+try {
+    supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+} catch (error) {
+    console.error("Supabase initialization failed:", error);
 }
-
-async function ensureSupabase(){
-
-    if(supabaseClient){
-        return supabaseClient;
-    }
-
-    if(supabaseLoadPromise){
-        return supabaseLoadPromise;
-    }
-
-    supabaseLoadPromise = (async()=>{
-
-        try{
-
-            if(!window.supabase){
-
-                try{
-                    await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2");
-                }
-                catch(primaryError){
-                    await loadScript("https://unpkg.com/@supabase/supabase-js@2");
-                }
-
-            }
-
-            if(!window.supabase || typeof window.supabase.createClient !== "function"){
-                throw new Error("Supabase library did not load correctly.");
-            }
-
-            supabaseClient = window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_ANON_KEY
-            );
-
-            supabaseInitError = null;
-            return supabaseClient;
-
-        }
-        catch(error){
-
-            console.error("Supabase initialization failed:",error);
-            supabaseInitError = error;
-            supabaseLoadPromise = null;
-            throw error;
-
-        }
-
-    })();
-
-    return supabaseLoadPromise;
-}
-
-
-
-/* =====================================================
-   AUTH MESSAGE
-===================================================== */
-
 
 
 /* =====================================================
@@ -3843,21 +3950,20 @@ function authMessage(message){
    CHECK AUTH
 ===================================================== */
 
-async function authReady(){
+function authReady(){
 
-    try{
-        await ensureSupabase();
-        return true;
-    }
-    catch(error){
+    if(!supabaseClient){
 
         authMessage(
-            "Supabase could not be loaded. Please check your internet connection and try again."
+            "Supabase connection could not be initialized. Please check the Supabase configuration."
         );
 
         return false;
 
     }
+
+
+    return true;
 
 }
 
@@ -3868,7 +3974,7 @@ async function authReady(){
 
 async function homeSignUp(){
 
-    if(!(await authReady())){
+    if(!authReady()){
         return;
     }
 
@@ -3987,7 +4093,7 @@ async function homeSignUp(){
 
 async function homeSignIn(){
 
-    if(!(await authReady())){
+    if(!authReady()){
         return;
     }
 
@@ -4067,7 +4173,7 @@ async function homeSignIn(){
 
 async function homeResetPassword(){
 
-    if(!(await authReady())){
+    if(!authReady()){
         return;
     }
 
@@ -4134,7 +4240,7 @@ async function homeResetPassword(){
 
 async function homeSignOut(){
 
-    if(!(await authReady())){
+    if(!authReady()){
         return;
     }
 
@@ -4244,7 +4350,7 @@ async function sendStudentForm(event){
     event.preventDefault();
 
 
-    if(!(await authReady())){
+    if(!authReady()){
         return;
     }
 
@@ -4399,15 +4505,6 @@ async function sendStudentForm(event){
             userId =
                 signUpData?.user?.id ||
                 null;
-
-
-            if(userId && !signUpData?.session){
-
-                throw new Error(
-                    "Your portal account was created, but Supabase requires email confirmation before the admission can be saved. Please confirm your email, then sign in and submit the admission form again."
-                );
-
-            }
 
 
             /* ======================================
@@ -4678,13 +4775,10 @@ async function sendStudentForm(event){
 
 async function initSupabaseHome(){
 
-    try{
-        await ensureSupabase();
-    }
-    catch(error){
+    if(!supabaseClient){
 
         authMessage(
-            "Supabase could not be loaded. Please check your internet connection and try again."
+            "Supabase connection is not available. Please check the Supabase configuration."
         );
 
         return;
