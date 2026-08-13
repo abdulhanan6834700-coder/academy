@@ -4,92 +4,226 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al Noor Quran Academy - Admin Login</title>
-  
-  <!-- 1. Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- 2. Supabase JS SDK (Latest v2 via unpkg) -->
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
 
-  <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
-    <h1 class="text-2xl font-bold text-center text-[#1a3a8f] mb-6">Admin Login</h1>
-    
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Supabase JS v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="bg-[#061121] flex items-center justify-center min-h-screen p-4">
+
+  <div class="w-full max-w-md bg-[#0b4f34] p-8 rounded-2xl shadow-2xl border border-[#d4af37]">
+    <h1 class="text-3xl font-bold text-center text-[#f3ca52] mb-2">
+      🔐 Admin Portal
+    </h1>
+    <p class="text-center text-white/80 mb-7">Al Noor Quran Academy</p>
+
     <form id="login-form">
       <div class="mb-4">
-        <label class="block text-gray-700 mb-2">Email</label>
-        <input type="email" id="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a3a8f]">
+        <label class="block text-white mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          autocomplete="username"
+          required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#f3ca52]"
+          placeholder="Admin email"
+        >
       </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 mb-2">Password</label>
-        <input type="password" id="password" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a3a8f]">
+
+      <div class="mb-5">
+        <label class="block text-white mb-2">Password</label>
+        <input
+          type="password"
+          id="password"
+          autocomplete="current-password"
+          required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#f3ca52]"
+          placeholder="Password"
+        >
       </div>
-      <button type="submit" id="login-btn" class="w-full bg-[#1a3a8f] text-white font-bold py-3 rounded-lg hover:bg-blue-900 transition duration-300">
+
+      <button
+        type="submit"
+        id="login-btn"
+        class="w-full bg-[#f3ca52] text-[#061121] font-bold py-3 rounded-lg hover:bg-white transition disabled:opacity-60"
+      >
         Login
       </button>
-      <p id="error-msg" class="text-red-500 text-center mt-4 hidden"></p>
+
+      <p id="status-msg" class="text-center mt-4 hidden"></p>
     </form>
   </div>
 
-  <script>
-    const SUPABASE_URL = "https://vxquqxiblysgzrpgfvgc.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
+<script>
+(function () {
+  "use strict";
 
-    let supabaseClient = null;
+  const SUPABASE_URL = "https://vxquqxiblysgzrpgfvgc.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_6ItmZHYYCjj0dn7nz7-uLQ_wzXwUJrO";
 
-    // Wait until DOM and scripts are fully loaded
-    window.addEventListener('load', () => {
-      if (window.supabase) {
-        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      } else {
-        console.error("Supabase SDK load nahi ho saka.");
+  let supabaseClient = null;
+
+  const form = document.getElementById("login-form");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const loginBtn = document.getElementById("login-btn");
+  const statusMsg = document.getElementById("status-msg");
+
+  function showMessage(message, type) {
+    statusMsg.textContent = message;
+    statusMsg.className = "text-center mt-4";
+    if (type === "error") {
+      statusMsg.classList.add("text-red-200");
+    } else {
+      statusMsg.classList.add("text-green-200");
+    }
+  }
+
+  function getSupabase() {
+    if (supabaseClient) return supabaseClient;
+
+    if (!window.supabase || typeof window.supabase.createClient !== "function") {
+      throw new Error(
+        "Supabase library load nahi hui. Internet connection ya browser network check karein."
+      );
+    }
+
+    supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY,
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true
+        }
       }
-    });
+    );
 
-    const form = document.getElementById('login-form');
-    const errorMsg = document.getElementById('error-msg');
-    const loginBtn = document.getElementById('login-btn');
+    return supabaseClient;
+  }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-      
-      errorMsg.classList.add('hidden');
-      loginBtn.disabled = true;
-      loginBtn.textContent = 'Logging in...';
+  async function checkExistingAdminSession() {
+    try {
+      const client = getSupabase();
+      const { data: { session } } = await client.auth.getSession();
 
-      try {
-        if (!supabaseClient) {
-          if (window.supabase) {
-            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-          } else {
-            throw new Error("Supabase library load nahi hui. Network connection check karein.");
+      if (!session) return;
+
+      const { data: profile, error } = await client
+        .from("profiles")
+        .select("role")
+        .eq("id", session.user.id)
+        .maybeSingle();
+
+      if (!error && profile && profile.role === "admin") {
+        window.location.href = "index.html";
+      }
+    } catch (err) {
+      console.warn("Session check:", err.message);
+    }
+  }
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    if (!email || !password) {
+      showMessage("Email aur password enter karein.", "error");
+      return;
+    }
+
+    loginBtn.disabled = true;
+    loginBtn.textContent = "Logging in...";
+    statusMsg.classList.add("hidden");
+
+    try {
+      const client = getSupabase();
+
+      const { data, error } = await client.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+      if (error) throw error;
+
+      if (!data.user) {
+        throw new Error("Login successful nahi hua. Dobara try karein.");
+      }
+
+      // Verify the logged-in user's role in public.profiles.
+      const { data: profile, error: profileError } = await client
+        .from("profiles")
+        .select("full_name, role")
+        .eq("id", data.user.id)
+        .maybeSingle();
+
+      if (profileError) {
+        await client.auth.signOut();
+        throw new Error(
+          "Login ho gaya, lekin admin profile verify nahi ho saki: " +
+          profileError.message
+        );
+      }
+
+      if (!profile || profile.role !== "admin") {
+        await client.auth.signOut();
+        throw new Error(
+          "Ye account Admin nahi hai. Supabase ke profiles table mein role = admin hona zaroori hai."
+        );
+      }
+
+      showMessage("Admin login successful. Opening portal...", "success");
+
+      // Keep the destination used by your current website.
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 500);
+
+    } catch (err) {
+      console.error("Admin login error:", err);
+      showMessage(err.message || "Login failed.", "error");
+      loginBtn.disabled = false;
+      loginBtn.textContent = "Login";
+    }
+  });
+
+  // Initialize immediately when the SDK is already available.
+  // Also retry briefly in case the CDN is still loading.
+  function initialize() {
+    try {
+      getSupabase();
+      checkExistingAdminSession();
+    } catch (err) {
+      let attempts = 0;
+      const timer = setInterval(function () {
+        attempts++;
+        try {
+          getSupabase();
+          clearInterval(timer);
+          checkExistingAdminSession();
+        } catch (e) {
+          if (attempts >= 20) {
+            clearInterval(timer);
+            console.error(e);
+            showMessage(e.message, "error");
           }
         }
+      }, 250);
+    }
+  }
 
-        const { data, error } = await supabaseClient.auth.signInWithPassword({
-          email: email,
-          password: password
-        });
-
-        if (error) {
-          throw error;
-        }
-
-        // Login hone par index.html par bhej dein
-        window.location.href = 'index.html'; 
-      } catch (err) {
-        errorMsg.textContent = err.message || "Login failed!";
-        errorMsg.classList.remove('hidden');
-      } finally {
-        loginBtn.disabled = false;
-        loginBtn.textContent = 'Login';
-      }
-    });
-  </script>
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize);
+  } else {
+    initialize();
+  }
+})();
+</script>
 
 </body>
 </html>
