@@ -1,45 +1,42 @@
 /* =====================================================
    AL NOOR QURAN ACADEMY
-   JAVASCRIPT
+   PREMIUM JAVASCRIPT
 ===================================================== */
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================
+   MOBILE MENU
+========================= */
 
-const menuBtn = document.getElementById("menuBtn");
+const menu = document.querySelector(".menu");
+const links = document.querySelector(".links");
 
-const navMenu = document.getElementById("navMenu");
+if (menu && links) {
 
+    menu.addEventListener("click", () => {
 
-if (menuBtn && navMenu) {
-
-    menuBtn.addEventListener("click", function () {
-
-        navMenu.classList.toggle("open");
+        links.classList.toggle("open");
 
     });
+
+
+    document.querySelectorAll(".links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                links.classList.remove("open");
+
+            });
+
+        });
 
 }
 
 
-/* ================= CLOSE MOBILE MENU ================= */
-
-document.querySelectorAll("#navMenu a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        if (navMenu) {
-
-            navMenu.classList.remove("open");
-
-        }
-
-    });
-
-});
-
-
-/* ================= SCROLL REVEAL ================= */
+/* =========================
+   SCROLL REVEAL
+========================= */
 
 const revealElements =
     document.querySelectorAll(".reveal");
@@ -47,16 +44,15 @@ const revealElements =
 
 const revealObserver =
     new IntersectionObserver(
+        (entries, observer) => {
 
-        function(entries) {
-
-            entries.forEach(function(entry) {
+            entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
                     entry.target.classList.add("show");
 
-                    revealObserver.unobserve(
+                    observer.unobserve(
                         entry.target
                     );
 
@@ -65,117 +61,132 @@ const revealObserver =
             });
 
         },
-
         {
             threshold: 0.12
         }
-
     );
 
 
-revealElements.forEach(function(element) {
+revealElements.forEach(element => {
 
     revealObserver.observe(element);
 
 });
 
 
-/* ================= COUNTER ANIMATION ================= */
+/* =========================
+   NUMBER COUNTER
+========================= */
 
 const counters =
-    document.querySelectorAll(".counter");
+    document.querySelectorAll("[data-count]");
 
 
 const counterObserver =
     new IntersectionObserver(
+        (entries, observer) => {
 
-        function(entries) {
-
-            entries.forEach(function(entry) {
+            entries.forEach(entry => {
 
                 if (!entry.isIntersecting) {
-
                     return;
-
                 }
 
 
                 const counter =
                     entry.target;
 
-
                 const target =
-                    parseInt(
-                        counter.getAttribute(
-                            "data-target"
-                        )
-                    );
-
+                    Number(counter.dataset.count);
 
                 let current = 0;
 
+                const duration = 1500;
 
-                const duration = 1800;
-
-                const increment =
-                    target /
-                    (duration / 20);
+                const start =
+                    performance.now();
 
 
-                const timer =
-                    setInterval(function() {
+                function update(time) {
 
-                        current += increment;
-
-
-                        if (current >= target) {
-
-                            counter.textContent =
-                                target + "+";
-
-                            clearInterval(timer);
-
-                        } else {
-
-                            counter.textContent =
-                                Math.floor(current);
-
-                        }
-
-                    }, 20);
+                    const progress =
+                        Math.min(
+                            (time - start) /
+                            duration,
+                            1
+                        );
 
 
-                counterObserver.unobserve(counter);
+                    const eased =
+                        1 -
+                        Math.pow(
+                            1 - progress,
+                            3
+                        );
+
+
+                    current =
+                        Math.floor(
+                            eased * target
+                        );
+
+
+                    counter.textContent =
+                        current + "+";
+
+
+                    if (progress < 1) {
+
+                        requestAnimationFrame(
+                            update
+                        );
+
+                    } else {
+
+                        counter.textContent =
+                            target + "+";
+
+                    }
+
+                }
+
+
+                requestAnimationFrame(
+                    update
+                );
+
+
+                observer.unobserve(counter);
 
             });
 
         },
-
         {
             threshold: 0.7
         }
-
     );
 
 
-counters.forEach(function(counter) {
+counters.forEach(counter => {
 
     counterObserver.observe(counter);
 
 });
 
 
-/* ================= ADMISSION FORM ================= */
+/* =========================
+   ADMISSION FORM
+========================= */
 
-const admissionForm =
+const form =
     document.getElementById(
         "admissionForm"
     );
 
 
-if (admissionForm) {
+if (form) {
 
-    admissionForm.addEventListener(
+    form.addEventListener(
         "submit",
         function(event) {
 
@@ -185,25 +196,25 @@ if (admissionForm) {
             const firstName =
                 document.getElementById(
                     "firstName"
-                ).value;
+                ).value.trim();
 
 
             const lastName =
                 document.getElementById(
                     "lastName"
-                ).value;
-
-
-            const email =
-                document.getElementById(
-                    "email"
-                ).value;
+                ).value.trim();
 
 
             const phone =
                 document.getElementById(
                     "phone"
-                ).value;
+                ).value.trim();
+
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value.trim();
 
 
             const country =
@@ -221,51 +232,26 @@ if (admissionForm) {
             const message =
                 document.getElementById(
                     "message"
-                ).value;
+                ).value.trim();
 
 
-            const whatsappNumber =
-                "923359195417";
+            const text =
+`Assalam-o-Alaikum Al Noor Quran Academy,
 
+I would like to book a Free Trial Quran Class.
 
-            const whatsappMessage =
-
-                "Assalam-o-Alaikum Al Noor Quran Academy%0A%0A" +
-
-                "New Free Trial / Admission Request%0A%0A" +
-
-                "Name: " +
-                firstName +
-                " " +
-                lastName +
-                "%0A" +
-
-                "Email: " +
-                email +
-                "%0A" +
-
-                "Phone: " +
-                phone +
-                "%0A" +
-
-                "Country: " +
-                country +
-                "%0A" +
-
-                "Course: " +
-                course +
-                "%0A" +
-
-                "Message: " +
-                message;
+Name: ${firstName} ${lastName}
+WhatsApp: ${phone}
+Email: ${email}
+Country: ${country}
+Course: ${course}
+Message: ${message}`;
 
 
             const whatsappURL =
-
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                whatsappMessage;
+                "https://wa.me/923359195417?text="
+                +
+                encodeURIComponent(text);
 
 
             window.open(
