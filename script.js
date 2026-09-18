@@ -1,185 +1,254 @@
-/* ==========================================
-   AL NOOR QURAN ACADEMY
-   Main JavaScript
-   ========================================== */
+/* =========================================================
+   AL NOOR QURAN ACADEMY JAVASCRIPT
+   ========================================================= */
 
 
-/* ---------- Mobile Navigation ---------- */
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
-const menu = document.querySelector('.menu');
-const links = document.querySelector('.links');
+const menu = document.querySelector(".menu");
+const links = document.querySelector(".links");
 
 if (menu && links) {
 
-  menu.onclick = () => {
-    links.classList.toggle('open');
-  };
+  menu.addEventListener("click", () => {
 
-}
+    links.classList.toggle("open");
 
+  });
 
-/* ---------- Scroll Reveal Animation ---------- */
 
-const obs = new IntersectionObserver(
+  links.querySelectorAll("a").forEach(link => {
 
-  entries => {
+    link.addEventListener("click", () => {
 
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add('show');
-
-      }
-
-    });
-
-  },
-
-  {
-    threshold: 0.12
-  }
-
-);
-
-
-document.querySelectorAll('.reveal').forEach(element => {
-
-  obs.observe(element);
-
-});
-
-
-/* ---------- Animated Counters ---------- */
-
-const counters =
-  document.querySelectorAll('[data-count]');
-
-
-const co = new IntersectionObserver(
-
-  entries => {
-
-    entries.forEach(entry => {
-
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-
-      const element = entry.target;
-
-      let number = 0;
-
-      const end =
-        Number(element.dataset.count);
-
-
-      const step =
-        Math.max(1, Math.ceil(end / 70));
-
-
-      const timer = setInterval(() => {
-
-        number += step;
-
-
-        if (number >= end) {
-
-          number = end;
-
-          clearInterval(timer);
-
-        }
-
-
-        element.textContent =
-          number + '+';
-
-      }, 18);
-
-
-      co.unobserve(element);
-
-    });
-
-  },
-
-  {
-    threshold: 0.4
-  }
-
-);
-
-
-counters.forEach(counter => {
-
-  co.observe(counter);
-
-});
-
-
-/* ---------- FAQ Accordion ---------- */
-
-document
-  .querySelectorAll('.faq-item')
-  .forEach(item => {
-
-    const question =
-      item.querySelector('.faq-q');
-
-
-    if (!question) {
-      return;
-    }
-
-
-    question.addEventListener('click', () => {
-
-      const isOpen =
-        item.classList.contains('open');
-
-
-      document
-        .querySelectorAll('.faq-item.open')
-        .forEach(openItem => {
-
-          if (openItem !== item) {
-
-            openItem.classList.remove('open');
-
-          }
-
-        });
-
-
-      item.classList.toggle(
-        'open',
-        !isOpen
-      );
+      links.classList.remove("open");
 
     });
 
   });
 
+}
 
-/* ---------- WhatsApp Number ---------- */
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+
+if ("IntersectionObserver" in window) {
+
+  const revealObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+  });
+
+} else {
+
+  revealElements.forEach(element => {
+
+    element.classList.add("show");
+
+  });
+
+}
+
+
+/* =========================================================
+   ANIMATED COUNTERS
+   ========================================================= */
+
+const counters =
+  document.querySelectorAll("[data-count]");
+
+
+if (counters.length) {
+
+  const counterObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+
+          const element =
+            entry.target;
+
+
+          const target =
+            Number(
+              element.dataset.count
+            );
+
+
+          let current = 0;
+
+
+          const duration = 1200;
+
+          const start =
+            performance.now();
+
+
+          function updateCounter(now) {
+
+            const progress =
+              Math.min(
+                (now - start) / duration,
+                1
+              );
+
+
+            current =
+              Math.floor(
+                progress * target
+              );
+
+
+            element.textContent =
+              current + "+";
+
+
+            if (progress < 1) {
+
+              requestAnimationFrame(
+                updateCounter
+              );
+
+            } else {
+
+              element.textContent =
+                target + "+";
+
+            }
+
+          }
+
+
+          requestAnimationFrame(
+            updateCounter
+          );
+
+
+          counterObserver.unobserve(
+            element
+          );
+
+        });
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+  counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+  });
+
+}
+
+
+/* =========================================================
+   FAQ ACCORDION
+   ========================================================= */
+
+const faqItems =
+  document.querySelectorAll(".faq-item");
+
+
+faqItems.forEach(item => {
+
+  const question =
+    item.querySelector(".faq-q");
+
+
+  if (!question) {
+    return;
+  }
+
+
+  question.addEventListener("click", () => {
+
+    const isOpen =
+      item.classList.contains("open");
+
+
+    faqItems.forEach(other => {
+
+      if (other !== item) {
+
+        other.classList.remove("open");
+
+      }
+
+    });
+
+
+    item.classList.toggle(
+      "open",
+      !isOpen
+    );
+
+  });
+
+});
+
+
+/* =========================================================
+   WHATSAPP CONTACT FORM
+   ========================================================= */
 
 const WHATSAPP_NUMBER =
   "923359195417";
 
 
-/* ---------- Contact Form ---------- */
-
 const leadForm =
-  document.getElementById('leadForm');
+  document.getElementById("leadForm");
 
 
 if (leadForm) {
 
   leadForm.addEventListener(
-    'submit',
-    function (event) {
+    "submit",
+    function(event) {
 
       event.preventDefault();
 
@@ -188,46 +257,50 @@ if (leadForm) {
         new FormData(leadForm);
 
 
-      const first =
-        formData.get('firstName') || '';
+      const firstName =
+        formData.get("firstName") || "";
 
 
-      const last =
-        formData.get('lastName') || '';
+      const lastName =
+        formData.get("lastName") || "";
 
 
       const phone =
-        formData.get('phone') || '';
+        formData.get("phone") || "";
 
 
       const email =
-        formData.get('email') || '';
+        formData.get("email") || "";
 
 
       const country =
-        formData.get('country') || '';
+        formData.get("country") || "";
 
 
       const course =
-        formData.get('course') || '';
+        formData.get("course") || "";
 
 
       const message =
-        formData.get('message') || '';
+        formData.get("message") || "";
 
 
-      const noteElement =
-        document.getElementById('formNote');
+      const note =
+        document.getElementById(
+          "formNote"
+        );
 
 
-      /* ---------- Validation ---------- */
+      if (
+        !firstName ||
+        !lastName ||
+        !phone
+      ) {
 
-      if (!first || !last || !phone) {
+        if (note) {
 
-        if (noteElement) {
-
-          noteElement.textContent =
-            "Please fill your name and WhatsApp number.";
+          note.textContent =
+            "Please enter your name and WhatsApp number.";
 
         }
 
@@ -236,16 +309,14 @@ if (leadForm) {
       }
 
 
-      /* ---------- WhatsApp Message ---------- */
+      const whatsappMessage =
 
-      const text =
-
-        "New Free Trial Request - Al Noor Quran Academy\n" +
+        "New Free Trial Request - Al Noor Quran Academy\n\n" +
 
         "Name: " +
-        first +
+        firstName +
         " " +
-        last +
+        lastName +
         "\n" +
 
         "WhatsApp: " +
@@ -277,23 +348,27 @@ if (leadForm) {
         );
 
 
-      const url =
+      const whatsappURL =
+
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
-        encodeURIComponent(text);
+        encodeURIComponent(
+          whatsappMessage
+        );
 
 
       window.open(
-        url,
-        "_blank"
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
       );
 
 
-      if (noteElement) {
+      if (note) {
 
-        noteElement.textContent =
-          "Opening WhatsApp to send your request — please tap Send there to confirm.";
+        note.textContent =
+          "WhatsApp opened. Please press Send to submit your request.";
 
       }
 
@@ -301,7 +376,6 @@ if (leadForm) {
       leadForm.reset();
 
     }
-
   );
 
 }
