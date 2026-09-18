@@ -1,265 +1,307 @@
-/* =====================================================
+/* ==========================================
    AL NOOR QURAN ACADEMY
-   PREMIUM JAVASCRIPT
-===================================================== */
+   Main JavaScript
+   ========================================== */
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* ---------- Mobile Navigation ---------- */
 
-const menu = document.querySelector(".menu");
-const links = document.querySelector(".links");
+const menu = document.querySelector('.menu');
+const links = document.querySelector('.links');
 
 if (menu && links) {
 
-    menu.addEventListener("click", () => {
-
-        links.classList.toggle("open");
-
-    });
-
-
-    document.querySelectorAll(".links a")
-        .forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                links.classList.remove("open");
-
-            });
-
-        });
+  menu.onclick = () => {
+    links.classList.toggle('open');
+  };
 
 }
 
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* ---------- Scroll Reveal Animation ---------- */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+const obs = new IntersectionObserver(
 
+  entries => {
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
+    entries.forEach(entry => {
 
-            entries.forEach(entry => {
+      if (entry.isIntersecting) {
 
-                if (entry.isIntersecting) {
+        entry.target.classList.add('show');
 
-                    entry.target.classList.add("show");
+      }
 
-                    observer.unobserve(
-                        entry.target
-                    );
+    });
 
-                }
+  },
 
-            });
+  {
+    threshold: 0.12
+  }
 
-        },
-        {
-            threshold: 0.12
-        }
-    );
+);
 
 
-revealElements.forEach(element => {
+document.querySelectorAll('.reveal').forEach(element => {
 
-    revealObserver.observe(element);
+  obs.observe(element);
 
 });
 
 
-/* =========================
-   NUMBER COUNTER
-========================= */
+/* ---------- Animated Counters ---------- */
 
 const counters =
-    document.querySelectorAll("[data-count]");
+  document.querySelectorAll('[data-count]');
 
 
-const counterObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
+const co = new IntersectionObserver(
 
-            entries.forEach(entry => {
+  entries => {
 
-                if (!entry.isIntersecting) {
-                    return;
-                }
+    entries.forEach(entry => {
 
-
-                const counter =
-                    entry.target;
-
-                const target =
-                    Number(counter.dataset.count);
-
-                let current = 0;
-
-                const duration = 1500;
-
-                const start =
-                    performance.now();
+      if (!entry.isIntersecting) {
+        return;
+      }
 
 
-                function update(time) {
+      const element = entry.target;
 
-                    const progress =
-                        Math.min(
-                            (time - start) /
-                            duration,
-                            1
-                        );
+      let number = 0;
+
+      const end =
+        Number(element.dataset.count);
 
 
-                    const eased =
-                        1 -
-                        Math.pow(
-                            1 - progress,
-                            3
-                        );
+      const step =
+        Math.max(1, Math.ceil(end / 70));
 
 
-                    current =
-                        Math.floor(
-                            eased * target
-                        );
+      const timer = setInterval(() => {
+
+        number += step;
 
 
-                    counter.textContent =
-                        current + "+";
+        if (number >= end) {
 
+          number = end;
 
-                    if (progress < 1) {
+          clearInterval(timer);
 
-                        requestAnimationFrame(
-                            update
-                        );
-
-                    } else {
-
-                        counter.textContent =
-                            target + "+";
-
-                    }
-
-                }
-
-
-                requestAnimationFrame(
-                    update
-                );
-
-
-                observer.unobserve(counter);
-
-            });
-
-        },
-        {
-            threshold: 0.7
         }
-    );
+
+
+        element.textContent =
+          number + '+';
+
+      }, 18);
+
+
+      co.unobserve(element);
+
+    });
+
+  },
+
+  {
+    threshold: 0.4
+  }
+
+);
 
 
 counters.forEach(counter => {
 
-    counterObserver.observe(counter);
+  co.observe(counter);
 
 });
 
 
-/* =========================
-   ADMISSION FORM
-========================= */
+/* ---------- FAQ Accordion ---------- */
 
-const form =
-    document.getElementById(
-        "admissionForm"
-    );
+document
+  .querySelectorAll('.faq-item')
+  .forEach(item => {
 
-
-if (form) {
-
-    form.addEventListener(
-        "submit",
-        function(event) {
-
-            event.preventDefault();
+    const question =
+      item.querySelector('.faq-q');
 
 
-            const firstName =
-                document.getElementById(
-                    "firstName"
-                ).value.trim();
+    if (!question) {
+      return;
+    }
 
 
-            const lastName =
-                document.getElementById(
-                    "lastName"
-                ).value.trim();
+    question.addEventListener('click', () => {
+
+      const isOpen =
+        item.classList.contains('open');
 
 
-            const phone =
-                document.getElementById(
-                    "phone"
-                ).value.trim();
+      document
+        .querySelectorAll('.faq-item.open')
+        .forEach(openItem => {
+
+          if (openItem !== item) {
+
+            openItem.classList.remove('open');
+
+          }
+
+        });
 
 
-            const email =
-                document.getElementById(
-                    "email"
-                ).value.trim();
+      item.classList.toggle(
+        'open',
+        !isOpen
+      );
+
+    });
+
+  });
 
 
-            const country =
-                document.getElementById(
-                    "country"
-                ).value;
+/* ---------- WhatsApp Number ---------- */
+
+const WHATSAPP_NUMBER =
+  "923359195417";
 
 
-            const course =
-                document.getElementById(
-                    "course"
-                ).value;
+/* ---------- Contact Form ---------- */
+
+const leadForm =
+  document.getElementById('leadForm');
 
 
-            const message =
-                document.getElementById(
-                    "message"
-                ).value.trim();
+if (leadForm) {
+
+  leadForm.addEventListener(
+    'submit',
+    function (event) {
+
+      event.preventDefault();
 
 
-            const text =
-`Assalam-o-Alaikum Al Noor Quran Academy,
-
-I would like to book a Free Trial Quran Class.
-
-Name: ${firstName} ${lastName}
-WhatsApp: ${phone}
-Email: ${email}
-Country: ${country}
-Course: ${course}
-Message: ${message}`;
+      const formData =
+        new FormData(leadForm);
 
 
-            const whatsappURL =
-                "https://wa.me/923359195417?text="
-                +
-                encodeURIComponent(text);
+      const first =
+        formData.get('firstName') || '';
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
+      const last =
+        formData.get('lastName') || '';
+
+
+      const phone =
+        formData.get('phone') || '';
+
+
+      const email =
+        formData.get('email') || '';
+
+
+      const country =
+        formData.get('country') || '';
+
+
+      const course =
+        formData.get('course') || '';
+
+
+      const message =
+        formData.get('message') || '';
+
+
+      const noteElement =
+        document.getElementById('formNote');
+
+
+      /* ---------- Validation ---------- */
+
+      if (!first || !last || !phone) {
+
+        if (noteElement) {
+
+          noteElement.textContent =
+            "Please fill your name and WhatsApp number.";
 
         }
-    );
+
+        return;
+
+      }
+
+
+      /* ---------- WhatsApp Message ---------- */
+
+      const text =
+
+        "New Free Trial Request - Al Noor Quran Academy\n" +
+
+        "Name: " +
+        first +
+        " " +
+        last +
+        "\n" +
+
+        "WhatsApp: " +
+        phone +
+        "\n" +
+
+        (
+          email
+            ? "Email: " + email + "\n"
+            : ""
+        ) +
+
+        (
+          country
+            ? "Country: " + country + "\n"
+            : ""
+        ) +
+
+        (
+          course
+            ? "Course: " + course + "\n"
+            : ""
+        ) +
+
+        (
+          message
+            ? "Message: " + message
+            : ""
+        );
+
+
+      const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(text);
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+
+      if (noteElement) {
+
+        noteElement.textContent =
+          "Opening WhatsApp to send your request — please tap Send there to confirm.";
+
+      }
+
+
+      leadForm.reset();
+
+    }
+
+  );
 
 }
