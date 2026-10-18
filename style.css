@@ -1157,7 +1157,7 @@ img {
       rgba(0,66,47,.91) 42%,
       rgba(0,45,32,.42) 100%
     ),
-    url("quran-hero.jpg") center 55% / cover no-repeat;
+    url("quran-hero.jfif") center 55% / cover no-repeat;
 }
 
 .quran-hero-overlay {
@@ -1428,7 +1428,7 @@ img {
       rgba(0,65,47,.86) 48%,
       rgba(0,36,26,.48)
     ),
-    url("quran-hero.jpg") center 54% / cover no-repeat;
+    url("quran-hero.jfif") center 54% / cover no-repeat;
   color: #fff;
 }
 
@@ -1463,7 +1463,7 @@ img {
       rgba(0,65,47,.85) 48%,
       rgba(0,36,26,.42) 100%
     ),
-    url("quran-hero.jpg") center / cover no-repeat;
+    url("quran-hero.jfif") center / cover no-repeat;
 }
 
 .home-quran-hero .hero-art {
