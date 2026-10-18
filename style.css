@@ -1140,3 +1140,462 @@ textarea {
 img {
   max-width: 100%;
 }
+
+/* Premium Quran hero and photo styles */
+
+.quran-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,39,29,.97) 0%,
+      rgba(0,66,47,.91) 42%,
+      rgba(0,45,32,.42) 100%
+    ),
+    url("quran-hero.jpg") center 55% / cover no-repeat;
+}
+
+.quran-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 78% 35%,
+    rgba(221,174,67,.13),
+    transparent 38%
+  );
+}
+
+.quran-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  color: #fff;
+}
+
+.quran-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #f4d17b;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.quran-hero-content h1 {
+  max-width: 900px;
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(35px,5.2vw,70px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.quran-hero-content h2 {
+  margin: 0;
+  color: #f2cf79;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(23px,3vw,39px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.quran-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: min(390px,90%);
+  margin: 24px 0;
+  color: #e9bc54;
+  text-align: center;
+}
+
+.quran-divider:before,
+.quran-divider:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(236,200,112,.5);
+}
+
+.quran-divider span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 24px;
+  background: #087453;
+  color: #ffdc83;
+}
+
+.quran-hero-text {
+  margin: 0 0 15px;
+  font-size: clamp(19px,2.3vw,27px);
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.quran-hero-description {
+  max-width: 560px;
+  margin: 0 0 28px;
+  color: rgba(255,255,255,.83);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.quran-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quran-btn-outline,
+.quran-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 20px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.quran-btn-outline {
+  border: 1px solid rgba(255,255,255,.65);
+  background: rgba(255,255,255,.07);
+  color: #fff;
+}
+
+.quran-btn-gold {
+  border: 1px solid #d9a633;
+  background: #d9a633;
+  color: #fff;
+}
+
+.quran-btn-outline:hover,
+.quran-btn-gold:hover {
+  transform: translateY(-3px);
+}
+
+.quran-btn-gold:hover {
+  background: #bd8d25;
+}
+
+/* Quran photo card */
+
+.quran-photo-wrap {
+  position: relative;
+  min-height: 370px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #e9eee9;
+  box-shadow: 0 18px 45px rgba(0,40,28,.13);
+  isolation: isolate;
+}
+
+.quran-learning-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .6s ease;
+}
+
+.quran-photo-wrap:hover .quran-learning-photo {
+  transform: scale(1.04);
+}
+
+.quran-photo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,37,27,.72),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+.quran-photo-caption {
+  position: absolute;
+  z-index: 1;
+  left: 22px;
+  bottom: 22px;
+  max-width: calc(100% - 44px);
+  padding: 20px 22px;
+  border-left: 4px solid #d9a633;
+  border-radius: 12px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.quran-photo-caption h3 {
+  margin: 0 0 8px;
+  color: #064b38;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px,2vw,25px);
+}
+
+.quran-photo-caption p {
+  margin: 0;
+  color: #68766e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mission-heading {
+  color: var(--green-deep,#064b38);
+  margin-bottom: 12px;
+}
+
+/* WhatsApp floating button with inline logo */
+
+.wa.wa-original {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #00c96b;
+  color: #fff;
+  box-shadow: 0 7px 22px rgba(0,201,107,.38);
+  border: 3px solid rgba(255,255,255,.9);
+  transition: transform .2s ease, box-shadow .2s ease;
+  animation: waSoftPulse 2.4s ease-in-out infinite;
+}
+
+.wa.wa-original svg {
+  display: block;
+  width: 31px;
+  height: 31px;
+  color: #fff;
+  fill: currentColor;
+}
+
+.wa.wa-original:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 26px rgba(0,201,107,.48);
+}
+
+@keyframes waSoftPulse {
+  0%,100% {
+    box-shadow:
+      0 7px 22px rgba(0,201,107,.38),
+      0 0 0 0 rgba(0,201,107,.22);
+  }
+
+  50% {
+    box-shadow:
+      0 7px 22px rgba(0,201,107,.38),
+      0 0 0 9px rgba(0,201,107,0);
+  }
+}
+
+/* Shared emerald and gold banners */
+
+.quran-page-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,35,26,.97),
+      rgba(0,65,47,.86) 48%,
+      rgba(0,36,26,.48)
+    ),
+    url("quran-hero.jpg") center 54% / cover no-repeat;
+  color: #fff;
+}
+
+.quran-page-banner-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+
+.quran-page-banner h1 {
+  max-width: 850px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px,4.5vw,58px);
+  line-height: 1.12;
+  margin: 0 0 14px;
+}
+
+.quran-page-banner p {
+  max-width: 650px;
+  color: rgba(255,255,255,.86);
+  font-size: 16px;
+  margin: 0 0 24px;
+}
+
+.home-quran-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,35,26,.96) 0%,
+      rgba(0,65,47,.85) 48%,
+      rgba(0,36,26,.42) 100%
+    ),
+    url("quran-hero.jpg") center / cover no-repeat;
+}
+
+.home-quran-hero .hero-art {
+  opacity: .12;
+}
+
+.home-quran-hero .hero-copy {
+  max-width: 760px;
+}
+
+.home-quran-hero .hero h1,
+.home-quran-hero h1 {
+  color: #fff;
+}
+
+.home-quran-hero .eyebrow {
+  color: #f4d17b;
+}
+
+.visual-photo-card {
+  width: 100%;
+  min-height: 370px;
+}
+
+.visual-photo-card .quran-learning-photo {
+  border-radius: 24px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  .quran-hero {
+    min-height: 530px;
+    background-position: 58% center;
+  }
+
+  .quran-hero-content {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .quran-hero-content h1 {
+    font-size: clamp(32px,8vw,48px);
+  }
+
+  .quran-hero-content h2 {
+    font-size: clamp(22px,5.5vw,30px);
+  }
+
+  .quran-hero-description {
+    font-size: 14px;
+  }
+
+  .quran-hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 330px;
+  }
+
+  .quran-btn-outline,
+  .quran-btn-gold {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .quran-photo-wrap {
+    min-height: 330px;
+    border-radius: 19px;
+  }
+
+  .quran-photo-caption {
+    left: 15px;
+    bottom: 15px;
+    padding: 16px;
+    max-width: calc(100% - 30px);
+  }
+
+  .quran-page-banner {
+    min-height: 390px;
+    background-position: 58% center;
+  }
+
+  .quran-page-banner-content {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .quran-page-banner p {
+    font-size: 14px;
+  }
+
+  .quran-page-banner .quran-hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 330px;
+  }
+
+  .quran-page-banner .quran-btn-outline,
+  .quran-page-banner .quran-btn-gold {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .visual-photo-card {
+    min-height: 320px;
+  }
+
+  .wa.wa-original {
+    right: 14px;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quran-learning-photo,
+  .quran-btn-outline,
+  .quran-btn-gold,
+  .wa.wa-original {
+    transition: none;
+  }
+
+  .wa.wa-original {
+    animation: none;
+  }
+}
+
+.menu {
+  border: 0;
+  background: transparent;
+  padding: 4px 8px;
+}
+
